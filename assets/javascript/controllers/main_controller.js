@@ -29,7 +29,11 @@ App.controller('mrController', ['$scope', '$timeout', '$http', function($scope, 
     $http.get('assets/levels/1.json').success(function(lvlData){
         $scope.level = lvlData;
         $scope.setPlayGroundSize()
-        $scope.player = {type: 'player', i: $scope.level.start.i, j: $scope.level.start.j, direction: 'north'}
+        $scope.player = {
+          type: 'player',
+          i: $scope.level.start.i, j: $scope.level.start.j,
+          direction: $scope.level.start ? $scope.level.start : 'north'
+        }
         $scope.player.script = sample_script
         $scope.tries = 0
         $scope.play = true

@@ -20,7 +20,7 @@ var level = {
     ]
   ],
   //where user starts
-  start: {i: 0, j: 1},
+  start: {i: 0, j: 1, direction: 'north'},
   //where user needs to go to
   end: {i: 1, j: 0},
 }
