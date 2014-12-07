@@ -38,7 +38,7 @@
               <button ng-click="toggleToolbar()" class="btn hide-toolbar" title="Hide toolbar"><li class="fa fa-chevron-left"></li></button>
             </div>
             <div>
-              <div ui-ace ng-model="player.script"></div>
+              <div ui-ace="{useWrapMode : true, mode: 'xml'}" ng-model="player.script"></div>
               <div class="console">{{console()}}</div>
             </div>
           </div>
