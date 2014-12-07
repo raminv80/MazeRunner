@@ -29,8 +29,17 @@ sample_script = "# Program your character to get home!\n# you can use hash sign 
 
 var levels = [
   {json: 'assets/levels/t1.json', category: 'tutorial'},
+  {json: 'assets/levels/t2.json', category: 'tutorial'},
+  {json: 'assets/levels/t3.json', category: 'tutorial'},
+  {json: 'assets/levels/t4.json', category: 'tutorial'},
+  {json: 'assets/levels/t5.json', category: 'tutorial'},
+  {json: 'assets/levels/t6.json', category: 'tutorial'},
+  {json: 'assets/levels/t7.json', category: 'tutorial'},
+  {json: 'assets/levels/t8.json', category: 'tutorial'},
   {json: 'assets/levels/1.json', category: 'medium'}
 ]
+
+var number_of_tutorial = 8
 
 var App = angular.module('mazeRunner', ['mrCompiler','ui.ace'])
 
@@ -45,4 +54,4 @@ music.volume=0.3
 music.loop = true
 
 var txtWin = 'TADA! Congradulations!'
-var txtFinish = 'Script is finished. Add more moves or a loop!'
+var txtFinish = 'Script is finished. Add more commands or a loop!'

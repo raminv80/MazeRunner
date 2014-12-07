@@ -1,7 +1,7 @@
 {
     "enemies": [],
     "size": {
-        "width": 2,
+        "width": 10,
         "height": 1
     },
     "terrain": [
@@ -14,20 +14,60 @@
             {
                 "i": 1,
                 "j": 0,
+                "type": "path"
+            },
+            {
+                "i": 2,
+                "j": 0,
+                "type": "path"
+            },
+            {
+                "i": 3,
+                "j": 0,
+                "type": "path"
+            },
+            {
+                "i": 4,
+                "j": 0,
+                "type": "path"
+            },
+            {
+                "i": 5,
+                "j": 0,
+                "type": "path"
+            },
+            {
+                "i": 6,
+                "j": 0,
                 "type": "end"
+            },
+            {
+                "i": 7,
+                "j": 0,
+                "type": "path"
+            },
+            {
+                "i": 8,
+                "j": 0,
+                "type": "path"
+            },
+            {
+                "i": 9,
+                "j": 0,
+                "type": "path"
             }
         ]
     ],
     "start": {
-        "i": 0,
+        "i": 4,
         "j": 0,
         "direction": "east",
-        "default_script": "# Hi i'm Bleen.\n# Would you please help me get home?\n# my house is just one block ahead!\n\n# Voice in my head: #This must be my lucky day!\n# Hurry up and click on the Run button!\n\nforward 1",
+        "default_script": "# Hi i'm Bleen.\n# Would you please help me get home?\n# my house is just one block ahead!\n\n# Voice in my head: #This must be my lucky day!\n# Hurry up and click on the Run button!\n\nforward 2",
         "mute": false,
         "play": false
     },
     "end": {
-        "i": 1,
+        "i": 6,
         "j": 0
     }
 }

@@ -4,16 +4,18 @@ App.controller('mrController', ['$scope', '$timeout', '$http', function($scope, 
   $scope.current_level = 0
 
   $scope.loading = true
-  $scope.seconds = 0
+  $scope.frame = 0
 
   //=========game events============//
   var onStart = function(){
     $scope.play = false
     $scope.mute = true
+    $scope.player = {}
     $scope.loadLevel()
   }
 
-  var onUpdate = function(step) {
+  var onUpdate = function() {
+      $scope.frame++
       if ($scope.play) {
         $scope.$broadcast ('update');
         updateGameState()
@@ -33,21 +35,16 @@ App.controller('mrController', ['$scope', '$timeout', '$http', function($scope, 
         $scope.seconds=0
         $scope.level = lvlData;
         $scope.setPlayGroundSize()
-        $scope.player = {
-          type: 'player',
-          i: $scope.level.start.i, j: $scope.level.start.j,
-          direction: $scope.level.start.direction ? $scope.level.start.direction : 'north'
-        }
         $scope.player.script = $scope.level.start.default_script
         $scope.tries = 0
         $scope.play = $scope.level.start.play
         if((navigator.platform.indexOf("iPhone") == -1) && (navigator.platform.indexOf("iPod") == -1))
           $scope.mute = $scope.level.start.mute
-        if(!$scope.mute) music.play()
+        if(!$scope.mute) {
+            music.play();
+        } else music.pause();
         $scope.loading = false
         $scope.$broadcast ('loaded');
-        // Start the timer
-        $timeout(onUpdate, $scope.tickInterval);
     }).error(function(){
       console.log('Error loading '+level_json+', falling back to auto seed the level!')
       seed() //temporary auto generate the level
@@ -61,7 +58,7 @@ App.controller('mrController', ['$scope', '$timeout', '$http', function($scope, 
       $scope.$broadcast ('loaded');
     })
   }
-
+  
   $scope.loadNextLevel = function(){
     $scope.current_level = ($scope.current_level+1) % levels.length
     $scope.play = false
@@ -129,6 +126,7 @@ App.controller('mrController', ['$scope', '$timeout', '$http', function($scope, 
       music.pause()
       $scope.$broadcast ('pause');
     }else{
+      $scope.$broadcast ('play');
       if(!$scope.mute) music.play()
     }
   }
@@ -140,7 +138,6 @@ App.controller('mrController', ['$scope', '$timeout', '$http', function($scope, 
   }
 
   $scope.step = function(){
-    $scope.seconds++
     $scope.$broadcast ('update');
     updateGameState()
   }
@@ -159,4 +156,5 @@ App.controller('mrController', ['$scope', '$timeout', '$http', function($scope, 
   }
 
   $scope.init = onStart
+  $timeout(onUpdate, $scope.tickInterval);
 }])

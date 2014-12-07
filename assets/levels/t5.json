@@ -1,0 +1,117 @@
+{
+    "enemies": [
+        {
+            "i": 1,
+            "j": 0,
+            "direction": "east",
+            "type": "bug",
+            "script": "label l1; forward 2; turn right; forward 3; turn right; forward 2; wait 2; turn left; turn left; forward 2; turn left; forward 3; turn left; forward 2; wait 1; turn right; turn right; goto l1;"
+        }
+    ],
+    "size": {
+        "width": 4,
+        "height": 4
+    },
+    "terrain": [
+        [
+            {
+                "i": 0,
+                "j": 0,
+                "type": "path"
+            },
+            {
+                "i": 1,
+                "j": 0,
+                "type": "path"
+            },
+            {
+                "i": 2,
+                "j": 0,
+                "type": "path"
+            },
+            {
+                "i": 3,
+                "j": 0,
+                "type": "path"
+            }
+        ],
+         [
+            {
+                "i": 0,
+                "j": 1,
+                "type": "path"
+            },
+            {
+                "i": 1,
+                "j": 1,
+                "type": "mine"
+            },
+            {
+                "i": 2,
+                "j": 1,
+                "type": "mine"
+            },
+            {
+                "i": 3,
+                "j": 1,
+                "type": "path"
+            }
+        ],
+         [
+            {
+                "i": 0,
+                "j": 2,
+                "type": "path"
+            },
+            {
+                "i": 1,
+                "j": 2,
+                "type": "mine"
+            },
+            {
+                "i": 2,
+                "j": 2,
+                "type": "end"
+            },
+            {
+                "i": 3,
+                "j": 2,
+                "type": "path"
+            }
+        ],
+         [
+            {
+                "i": 0,
+                "j": 3,
+                "type": "path"
+            },
+            {
+                "i": 1,
+                "j": 3,
+                "type": "path"
+            },
+            {
+                "i": 2,
+                "j": 3,
+                "type": "path"
+            },
+            {
+                "i": 3,
+                "j": 3,
+                "type": "path"
+            }
+        ]
+    ],
+    "start": {
+        "i": 0,
+        "j": 1,
+        "direction": "east",
+        "default_script": "# Patience is always a good attitude. Specially against bullies!.\n# Use comman wait <n> to wait for n seconds before moving to next command...",
+        "mute": false,
+        "play": true
+    },
+    "end": {
+        "i": 2,
+        "j": 2
+    }
+}

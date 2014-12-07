@@ -1,0 +1,109 @@
+{
+    "enemies": [],
+    "size": {
+        "width": 4,
+        "height": 4
+    },
+    "terrain": [
+        [
+            {
+                "i": 0,
+                "j": 0,
+                "type": "path"
+            },
+            {
+                "i": 1,
+                "j": 0,
+                "type": "path"
+            },
+            {
+                "i": 2,
+                "j": 0,
+                "type": "path"
+            },
+            {
+                "i": 3,
+                "j": 0,
+                "type": "path"
+            }
+        ],
+         [
+            {
+                "i": 0,
+                "j": 1,
+                "type": "path"
+            },
+            {
+                "i": 1,
+                "j": 1,
+                "type": "path"
+            },
+            {
+                "i": 2,
+                "j": 1,
+                "type": "path"
+            },
+            {
+                "i": 3,
+                "j": 1,
+                "type": "path"
+            }
+        ],
+         [
+            {
+                "i": 0,
+                "j": 2,
+                "type": "path"
+            },
+            {
+                "i": 1,
+                "j": 2,
+                "type": "path"
+            },
+            {
+                "i": 2,
+                "j": 2,
+                "type": "end"
+            },
+            {
+                "i": 3,
+                "j": 2,
+                "type": "path"
+            }
+        ],
+         [
+            {
+                "i": 0,
+                "j": 3,
+                "type": "path"
+            },
+            {
+                "i": 1,
+                "j": 3,
+                "type": "path"
+            },
+            {
+                "i": 2,
+                "j": 3,
+                "type": "path"
+            },
+            {
+                "i": 3,
+                "j": 3,
+                "type": "path"
+            }
+        ]
+    ],
+    "start": {
+        "i": 0,
+        "j": 1,
+        "direction": "east",
+        "default_script": "# Bleen: Seems I'm taking the wrong turn!\n\n# help Bleen to take the right turn at the junction\nforward 2\nturn left\nforward 3",
+        "mute": false,
+        "play": true
+    },
+    "end": {
+        "i": 2,
+        "j": 2
+    }
+}

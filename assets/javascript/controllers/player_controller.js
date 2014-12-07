@@ -1,9 +1,7 @@
 App.controller('playerController', ['$scope', 'scriptCompiler', function($scope, scriptCompiler){
 
   $scope.init_player = function (){
-    if(!$scope.player.origin) $scope.player.origin = {i: $scope.player.i, j: $scope.player.j, direction: $scope.player.direction}
     resetPlayer()
-    $scope.player_initilized = true
   }
 
   $scope.spriteClass = function(player){
@@ -118,6 +116,8 @@ App.controller('playerController', ['$scope', 'scriptCompiler', function($scope,
     player = $scope.player
     if(player.i==$scope.level.end.i && player.j==$scope.level.end.j){
       player.win=true
+      $scope.play = false
+      $scope.player.script_pointer = $scope.player.compiled_script.length
       if($scope.enableCelebration){
         celebrate()
         $scope.enableCelebration = false
@@ -126,7 +126,6 @@ App.controller('playerController', ['$scope', 'scriptCompiler', function($scope,
     player.dead = deadlyCollision()
     if(player.dead){
       resetPlayer()
-      player.script_pointer = -1
     }
   }
 
@@ -139,12 +138,12 @@ App.controller('playerController', ['$scope', 'scriptCompiler', function($scope,
   function deadlyCollision(){
     var dead=false
     //ran out of screen?
-    if($scope.player.i<0 || $scope.player.j<0 || $scope.player.i>$scope.level.size.width || $scope.player.j>$scope.level.size.height){
+    if($scope.player.i<0 || $scope.player.j<0 || $scope.player.i>=$scope.level.size.width || $scope.player.j>=$scope.level.size.height){
       dead = true
       if(!$scope.mute) fall.play()
     }
     //ran into spikes?
-    if(!dead && ['mine','spike'].indexOf($scope.level.terrain[$scope.player.j][$scope.player.i].type) > -1){
+    if(!dead && $scope.player.j<$scope.level.size.height && $scope.player.i<$scope.level.size.width && ['mine','spike'].indexOf($scope.level.terrain[$scope.player.j][$scope.player.i].type) > -1){
       dead=true
       if(!$scope.mute) electrify.play()
     }
@@ -159,17 +158,20 @@ App.controller('playerController', ['$scope', 'scriptCompiler', function($scope,
   }
 
   function resetPlayer(){
-    if($scope.player.origin){
-      $scope.player.i = $scope.player.origin.i
-      $scope.player.j = $scope.player.origin.j
-      $scope.player.direction = $scope.player.origin.direction
-      $scope.player.script_pointer = 0
+    $scope.player_initilized = false
+    if($scope.level.start){
+      $scope.player.i = $scope.level.start.i
+      $scope.player.j = $scope.level.start.j
+      $scope.player.direction = $scope.level.start.direction
+      if(!$scope.player.origin) $scope.player.origin = {i: $scope.player.i, j: $scope.player.j, direction: $scope.player.direction}
+      $scope.player.script_pointer = -1
     }
     $scope.player.dead = false
     $scope.player.win = false
     $scope.enableCelebration = true
     $scope.tries++
     compileUserScript()
+    $scope.player_initilized = true
   }
 
   function compileUserScript(){
@@ -188,5 +190,9 @@ App.controller('playerController', ['$scope', 'scriptCompiler', function($scope,
 
   $scope.$on('pause', function() {
     resetPlayer()
+  })
+  
+  $scope.$on('play', function() {
+    compileUserScript()
   })
 }])

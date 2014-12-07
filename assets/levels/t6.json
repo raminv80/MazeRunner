@@ -1,0 +1,109 @@
+{
+    "enemies": [],
+    "size": {
+        "width": 4,
+        "height": 4
+    },
+    "terrain": [
+        [
+            {
+                "i": 0,
+                "j": 0,
+                "type": "path"
+            },
+            {
+                "i": 1,
+                "j": 0,
+                "type": "path"
+            },
+            {
+                "i": 2,
+                "j": 0,
+                "type": "path"
+            },
+            {
+                "i": 3,
+                "j": 0,
+                "type": "end"
+            }
+        ],
+         [
+            {
+                "i": 0,
+                "j": 1,
+                "type": "path"
+            },
+            {
+                "i": 1,
+                "j": 1,
+                "type": "path"
+            },
+            {
+                "i": 2,
+                "j": 1,
+                "type": "path"
+            },
+            {
+                "i": 3,
+                "j": 1,
+                "type": "path"
+            }
+        ],
+         [
+            {
+                "i": 0,
+                "j": 2,
+                "type": "path"
+            },
+            {
+                "i": 1,
+                "j": 2,
+                "type": "path"
+            },
+            {
+                "i": 2,
+                "j": 2,
+                "type": "path"
+            },
+            {
+                "i": 3,
+                "j": 2,
+                "type": "path"
+            }
+        ],
+         [
+            {
+                "i": 0,
+                "j": 3,
+                "type": "path"
+            },
+            {
+                "i": 1,
+                "j": 3,
+                "type": "path"
+            },
+            {
+                "i": 2,
+                "j": 3,
+                "type": "path"
+            },
+            {
+                "i": 3,
+                "j": 3,
+                "type": "path"
+            }
+        ]
+    ],
+    "start": {
+        "i": 0,
+        "j": 3,
+        "direction": "east",
+        "default_script": "# Give yourself a high five! You already learned basiscs of programming.\n# A program is combination of one or more commands.\n# Let's continue to some more advanced commands.\n# Label <name> is a special command to name a part of your program.\n# They don't do much on their own but helps you organize the program. for ex:\n\nLabel starting\nforward 3\nturn left\nforward 3\nLabel home-sweet-home!\n\n# Run the program when you are ready to move to next level.",
+        "mute": false,
+        "play": false
+    },
+    "end": {
+        "i": 3,
+        "j": 0
+    }
+}

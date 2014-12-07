@@ -1,0 +1,109 @@
+{
+    "enemies": [],
+    "size": {
+        "width": 4,
+        "height": 4
+    },
+    "terrain": [
+        [
+            {
+                "i": 0,
+                "j": 0,
+                "type": "path"
+            },
+            {
+                "i": 1,
+                "j": 0,
+                "type": "path"
+            },
+            {
+                "i": 2,
+                "j": 0,
+                "type": "path"
+            },
+            {
+                "i": 3,
+                "j": 0,
+                "type": "path"
+            }
+        ],
+         [
+            {
+                "i": 0,
+                "j": 1,
+                "type": "path"
+            },
+            {
+                "i": 1,
+                "j": 1,
+                "type": "mine"
+            },
+            {
+                "i": 2,
+                "j": 1,
+                "type": "mine"
+            },
+            {
+                "i": 3,
+                "j": 1,
+                "type": "path"
+            }
+        ],
+         [
+            {
+                "i": 0,
+                "j": 2,
+                "type": "path"
+            },
+            {
+                "i": 1,
+                "j": 2,
+                "type": "mine"
+            },
+            {
+                "i": 2,
+                "j": 2,
+                "type": "end"
+            },
+            {
+                "i": 3,
+                "j": 2,
+                "type": "path"
+            }
+        ],
+         [
+            {
+                "i": 0,
+                "j": 3,
+                "type": "path"
+            },
+            {
+                "i": 1,
+                "j": 3,
+                "type": "path"
+            },
+            {
+                "i": 2,
+                "j": 3,
+                "type": "path"
+            },
+            {
+                "i": 3,
+                "j": 3,
+                "type": "path"
+            }
+        ]
+    ],
+    "start": {
+        "i": 0,
+        "j": 1,
+        "direction": "east",
+        "default_script": "# Well done! You learned how to give simple directions to move forward and turn.\n# You can combine these commands to move Bleen around.\n# Guide her home safely!\n\n",
+        "mute": false,
+        "play": true
+    },
+    "end": {
+        "i": 2,
+        "j": 2
+    }
+}

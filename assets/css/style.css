@@ -130,7 +130,7 @@ table tr td.end{
   background-position: 0px 0px;
 }
 .player.north{background-position: 0px 0px;}
-.player.south{background-position: -30px 30px;}
+.player.south{background-position: -30px 0px;}
 .player.west{background-position: -60px 0px;}
 .player.east{background-position: -90px 0px;}
 

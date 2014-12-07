@@ -1,0 +1,43 @@
+{
+    "enemies": [],
+    "size": {
+        "width": 4,
+        "height": 1
+    },
+    "terrain": [
+        [
+            {
+                "i": 0,
+                "j": 0,
+                "type": "path"
+            },
+            {
+                "i": 1,
+                "j": 0,
+                "type": "path"
+            },
+            {
+                "i": 2,
+                "j": 0,
+                "type": "path"
+            },
+            {
+                "i": 3,
+                "j": 0,
+                "type": "end"
+            }
+        ]
+    ],
+    "start": {
+        "i": 0,
+        "j": 0,
+        "direction": "east",
+        "default_script": "# Bleen: I'm lost. Help me get to my Home.\n\n# Type: forward <number of moves> then press Run\n",
+        "mute": false,
+        "play": false
+    },
+    "end": {
+        "i": 3,
+        "j": 0
+    }
+}
