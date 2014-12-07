@@ -42,3 +42,6 @@ var tada = new Audio('assets/sounds/TaDa.mp3')
 electrify.volume = 0.3
 music.volume=0.3
 music.loop = true
+
+var txtWin = 'TADA! Congradulations!'
+var txtFinish = 'Script is finished. Add more moves or a loop!'

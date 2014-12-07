@@ -108,9 +108,8 @@ App.controller('playerController', ['$scope', 'scriptCompiler', function($scope,
         break;
       }
     }else{
-      s= 'Script is finished. Add more moves or a loop!'
-      if($scope.player.errors.indexOf(s)==-1)
-        $scope.player.errors.push(s)
+      if($scope.player.errors.indexOf(txtFinish)==-1 && $scope.player.errors.indexOf(txtWin)==-1)
+        $scope.player.errors.push(txtFinish)
     }
 
   }
@@ -133,9 +132,8 @@ App.controller('playerController', ['$scope', 'scriptCompiler', function($scope,
 
   function celebrate(){
     if(!$scope.mute) tada.play()
-    s= 'TADA! Congradulations!'
-    if($scope.player.errors.indexOf(s)==-1)
-      $scope.player.errors.push(s)
+    if($scope.player.errors.indexOf(txtWin)==-1)
+      $scope.player.errors.push(txtWin)
   }
 
   function deadlyCollision(){
