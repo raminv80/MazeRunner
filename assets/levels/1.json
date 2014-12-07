@@ -1,0 +1,668 @@
+{
+    "enemies": [
+        {
+            "i": 1,
+            "j": 1,
+            "type": "bug",
+            "script": "label l1; turn right; forward 4; turn right; turn right; forward 4; wait 1; forward 1; wait 2; turn right; turn right; forward 1; turn left; goto l1;",
+            "$$hashKey": "object:24"
+        },
+        {
+            "i": 8,
+            "j": 8,
+            "type": "bug",
+            "script": "label l1;turn left; forward 3; turn right; turn right; forward 3; turn left; goto l1",
+            "$$hashKey": "object:25"
+        },
+        {
+            "i": 8,
+            "j": 1,
+            "type": "bug",
+            "script": "label l1; wait 1; goto l1;",
+            "direction": "south",
+            "$$hashKey": "object:26"
+        },
+        {
+            "i": 3,
+            "j": 7,
+            "type": "bug",
+            "script": "label l1; forward 3; turn right; forward 4; turn right; forward 9; turn right; forward 4; turn right; forward 6; goto l1;",
+            "direction": "west",
+            "$$hashKey": "object:27"
+        }
+    ],
+    "size": {
+        "width": 10,
+        "height": 10
+    },
+    "terrain": [
+        [
+            {
+                "i": 0,
+                "j": 0,
+                "type": "path",
+                "$$hashKey": "object:36"
+            },
+            {
+                "i": 1,
+                "j": 0,
+                "type": "path",
+                "$$hashKey": "object:37"
+            },
+            {
+                "i": 2,
+                "j": 0,
+                "type": "path",
+                "$$hashKey": "object:38"
+            },
+            {
+                "i": 3,
+                "j": 0,
+                "type": "path",
+                "$$hashKey": "object:39"
+            },
+            {
+                "i": 4,
+                "j": 0,
+                "type": "path",
+                "$$hashKey": "object:40"
+            },
+            {
+                "i": 5,
+                "j": 0,
+                "type": "path",
+                "$$hashKey": "object:41"
+            },
+            {
+                "i": 6,
+                "j": 0,
+                "type": "path",
+                "$$hashKey": "object:42"
+            },
+            {
+                "i": 7,
+                "j": 0,
+                "type": "path",
+                "$$hashKey": "object:43"
+            },
+            {
+                "i": 8,
+                "j": 0,
+                "type": "path",
+                "$$hashKey": "object:44"
+            },
+            {
+                "i": 9,
+                "j": 0,
+                "type": "end",
+                "$$hashKey": "object:45"
+            }
+        ],
+        [
+            {
+                "i": 0,
+                "j": 1,
+                "type": "path",
+                "$$hashKey": "object:56"
+            },
+            {
+                "i": 1,
+                "j": 1,
+                "type": "path",
+                "$$hashKey": "object:57"
+            },
+            {
+                "i": 2,
+                "j": 1,
+                "type": "path",
+                "$$hashKey": "object:58"
+            },
+            {
+                "i": 3,
+                "j": 1,
+                "type": "path",
+                "$$hashKey": "object:59"
+            },
+            {
+                "i": 4,
+                "j": 1,
+                "type": "path",
+                "$$hashKey": "object:60"
+            },
+            {
+                "i": 5,
+                "j": 1,
+                "type": "path",
+                "$$hashKey": "object:61"
+            },
+            {
+                "i": 6,
+                "j": 1,
+                "type": "path",
+                "$$hashKey": "object:62"
+            },
+            {
+                "i": 7,
+                "j": 1,
+                "type": "path",
+                "$$hashKey": "object:63"
+            },
+            {
+                "i": 8,
+                "j": 1,
+                "type": "path",
+                "$$hashKey": "object:64"
+            },
+            {
+                "i": 9,
+                "j": 1,
+                "type": "path",
+                "$$hashKey": "object:65"
+            }
+        ],
+        [
+            {
+                "i": 0,
+                "j": 2,
+                "type": "path",
+                "$$hashKey": "object:76"
+            },
+            {
+                "i": 1,
+                "j": 2,
+                "type": "path",
+                "$$hashKey": "object:77"
+            },
+            {
+                "i": 2,
+                "j": 2,
+                "type": "path",
+                "$$hashKey": "object:78"
+            },
+            {
+                "i": 3,
+                "j": 2,
+                "type": "path",
+                "$$hashKey": "object:79"
+            },
+            {
+                "i": 4,
+                "j": 2,
+                "type": "path",
+                "$$hashKey": "object:80"
+            },
+            {
+                "i": 5,
+                "j": 2,
+                "type": "path",
+                "$$hashKey": "object:81"
+            },
+            {
+                "i": 6,
+                "j": 2,
+                "type": "path",
+                "$$hashKey": "object:82"
+            },
+            {
+                "i": 7,
+                "j": 2,
+                "type": "path",
+                "$$hashKey": "object:83"
+            },
+            {
+                "i": 8,
+                "j": 2,
+                "type": "path",
+                "$$hashKey": "object:84"
+            },
+            {
+                "i": 9,
+                "j": 2,
+                "type": "path",
+                "$$hashKey": "object:85"
+            }
+        ],
+        [
+            {
+                "i": 0,
+                "j": 3,
+                "type": "path",
+                "$$hashKey": "object:96"
+            },
+            {
+                "i": 1,
+                "j": 3,
+                "type": "path",
+                "$$hashKey": "object:97"
+            },
+            {
+                "i": 2,
+                "j": 3,
+                "type": "path",
+                "$$hashKey": "object:98"
+            },
+            {
+                "i": 3,
+                "j": 3,
+                "type": "path",
+                "$$hashKey": "object:99"
+            },
+            {
+                "i": 4,
+                "j": 3,
+                "type": "path",
+                "$$hashKey": "object:100"
+            },
+            {
+                "i": 5,
+                "j": 3,
+                "type": "path",
+                "$$hashKey": "object:101"
+            },
+            {
+                "i": 6,
+                "j": 3,
+                "type": "path",
+                "$$hashKey": "object:102"
+            },
+            {
+                "i": 7,
+                "j": 3,
+                "type": "path",
+                "$$hashKey": "object:103"
+            },
+            {
+                "i": 8,
+                "j": 3,
+                "type": "path",
+                "$$hashKey": "object:104"
+            },
+            {
+                "i": 9,
+                "j": 3,
+                "type": "path",
+                "$$hashKey": "object:105"
+            }
+        ],
+        [
+            {
+                "i": 0,
+                "j": 4,
+                "type": "path",
+                "$$hashKey": "object:116"
+            },
+            {
+                "i": 1,
+                "j": 4,
+                "type": "path",
+                "$$hashKey": "object:117"
+            },
+            {
+                "i": 2,
+                "j": 4,
+                "type": "path",
+                "$$hashKey": "object:118"
+            },
+            {
+                "i": 3,
+                "j": 4,
+                "type": "path",
+                "$$hashKey": "object:119"
+            },
+            {
+                "i": 4,
+                "j": 4,
+                "type": "mine",
+                "$$hashKey": "object:120"
+            },
+            {
+                "i": 5,
+                "j": 4,
+                "type": "mine",
+                "$$hashKey": "object:121"
+            },
+            {
+                "i": 6,
+                "j": 4,
+                "type": "path",
+                "$$hashKey": "object:122"
+            },
+            {
+                "i": 7,
+                "j": 4,
+                "type": "path",
+                "$$hashKey": "object:123"
+            },
+            {
+                "i": 8,
+                "j": 4,
+                "type": "path",
+                "$$hashKey": "object:124"
+            },
+            {
+                "i": 9,
+                "j": 4,
+                "type": "path",
+                "$$hashKey": "object:125"
+            }
+        ],
+        [
+            {
+                "i": 0,
+                "j": 5,
+                "type": "path",
+                "$$hashKey": "object:136"
+            },
+            {
+                "i": 1,
+                "j": 5,
+                "type": "path",
+                "$$hashKey": "object:137"
+            },
+            {
+                "i": 2,
+                "j": 5,
+                "type": "path",
+                "$$hashKey": "object:138"
+            },
+            {
+                "i": 3,
+                "j": 5,
+                "type": "path",
+                "$$hashKey": "object:139"
+            },
+            {
+                "i": 4,
+                "j": 5,
+                "type": "path",
+                "$$hashKey": "object:140"
+            },
+            {
+                "i": 5,
+                "j": 5,
+                "type": "mine",
+                "$$hashKey": "object:141"
+            },
+            {
+                "i": 6,
+                "j": 5,
+                "type": "path",
+                "$$hashKey": "object:142"
+            },
+            {
+                "i": 7,
+                "j": 5,
+                "type": "path",
+                "$$hashKey": "object:143"
+            },
+            {
+                "i": 8,
+                "j": 5,
+                "type": "path",
+                "$$hashKey": "object:144"
+            },
+            {
+                "i": 9,
+                "j": 5,
+                "type": "path",
+                "$$hashKey": "object:145"
+            }
+        ],
+        [
+            {
+                "i": 0,
+                "j": 6,
+                "type": "path",
+                "$$hashKey": "object:156"
+            },
+            {
+                "i": 1,
+                "j": 6,
+                "type": "path",
+                "$$hashKey": "object:157"
+            },
+            {
+                "i": 2,
+                "j": 6,
+                "type": "path",
+                "$$hashKey": "object:158"
+            },
+            {
+                "i": 3,
+                "j": 6,
+                "type": "path",
+                "$$hashKey": "object:159"
+            },
+            {
+                "i": 4,
+                "j": 6,
+                "type": "path",
+                "$$hashKey": "object:160"
+            },
+            {
+                "i": 5,
+                "j": 6,
+                "type": "mine",
+                "$$hashKey": "object:161"
+            },
+            {
+                "i": 6,
+                "j": 6,
+                "type": "path",
+                "$$hashKey": "object:162"
+            },
+            {
+                "i": 7,
+                "j": 6,
+                "type": "path",
+                "$$hashKey": "object:163"
+            },
+            {
+                "i": 8,
+                "j": 6,
+                "type": "path",
+                "$$hashKey": "object:164"
+            },
+            {
+                "i": 9,
+                "j": 6,
+                "type": "path",
+                "$$hashKey": "object:165"
+            }
+        ],
+        [
+            {
+                "i": 0,
+                "j": 7,
+                "type": "path",
+                "$$hashKey": "object:176"
+            },
+            {
+                "i": 1,
+                "j": 7,
+                "type": "path",
+                "$$hashKey": "object:177"
+            },
+            {
+                "i": 2,
+                "j": 7,
+                "type": "path",
+                "$$hashKey": "object:178"
+            },
+            {
+                "i": 3,
+                "j": 7,
+                "type": "path",
+                "$$hashKey": "object:179"
+            },
+            {
+                "i": 4,
+                "j": 7,
+                "type": "path",
+                "$$hashKey": "object:180"
+            },
+            {
+                "i": 5,
+                "j": 7,
+                "type": "path",
+                "$$hashKey": "object:181"
+            },
+            {
+                "i": 6,
+                "j": 7,
+                "type": "path",
+                "$$hashKey": "object:182"
+            },
+            {
+                "i": 7,
+                "j": 7,
+                "type": "path",
+                "$$hashKey": "object:183"
+            },
+            {
+                "i": 8,
+                "j": 7,
+                "type": "path",
+                "$$hashKey": "object:184"
+            },
+            {
+                "i": 9,
+                "j": 7,
+                "type": "path",
+                "$$hashKey": "object:185"
+            }
+        ],
+        [
+            {
+                "i": 0,
+                "j": 8,
+                "type": "path",
+                "$$hashKey": "object:196"
+            },
+            {
+                "i": 1,
+                "j": 8,
+                "type": "path",
+                "$$hashKey": "object:197"
+            },
+            {
+                "i": 2,
+                "j": 8,
+                "type": "path",
+                "$$hashKey": "object:198"
+            },
+            {
+                "i": 3,
+                "j": 8,
+                "type": "path",
+                "$$hashKey": "object:199"
+            },
+            {
+                "i": 4,
+                "j": 8,
+                "type": "path",
+                "$$hashKey": "object:200"
+            },
+            {
+                "i": 5,
+                "j": 8,
+                "type": "path",
+                "$$hashKey": "object:201"
+            },
+            {
+                "i": 6,
+                "j": 8,
+                "type": "path",
+                "$$hashKey": "object:202"
+            },
+            {
+                "i": 7,
+                "j": 8,
+                "type": "path",
+                "$$hashKey": "object:203"
+            },
+            {
+                "i": 8,
+                "j": 8,
+                "type": "path",
+                "$$hashKey": "object:204"
+            },
+            {
+                "i": 9,
+                "j": 8,
+                "type": "path",
+                "$$hashKey": "object:205"
+            }
+        ],
+        [
+            {
+                "i": 0,
+                "j": 9,
+                "type": "path",
+                "$$hashKey": "object:216"
+            },
+            {
+                "i": 1,
+                "j": 9,
+                "type": "path",
+                "$$hashKey": "object:217"
+            },
+            {
+                "i": 2,
+                "j": 9,
+                "type": "path",
+                "$$hashKey": "object:218"
+            },
+            {
+                "i": 3,
+                "j": 9,
+                "type": "path",
+                "$$hashKey": "object:219"
+            },
+            {
+                "i": 4,
+                "j": 9,
+                "type": "path",
+                "$$hashKey": "object:220"
+            },
+            {
+                "i": 5,
+                "j": 9,
+                "type": "path",
+                "$$hashKey": "object:221"
+            },
+            {
+                "i": 6,
+                "j": 9,
+                "type": "path",
+                "$$hashKey": "object:222"
+            },
+            {
+                "i": 7,
+                "j": 9,
+                "type": "path",
+                "$$hashKey": "object:223"
+            },
+            {
+                "i": 8,
+                "j": 9,
+                "type": "path",
+                "$$hashKey": "object:224"
+            },
+            {
+                "i": 9,
+                "j": 9,
+                "type": "path",
+                "$$hashKey": "object:225"
+            }
+        ]
+    ],
+    "start": {
+        "i": 0,
+        "j": 9
+    },
+    "end": {
+        "i": 9,
+        "j": 0
+    }
+}

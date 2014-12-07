@@ -1,4 +1,4 @@
-App.controller('mrController', ['$scope', '$timeout', function($scope, $timeout){
+App.controller('mrController', ['$scope', '$timeout', '$http', function($scope, $timeout, $http){
   var block_px=30
   $scope.tickInterval = 300 //ms
 
@@ -6,8 +6,8 @@ App.controller('mrController', ['$scope', '$timeout', function($scope, $timeout)
 
   //=========game events============//
   var onStart = function(){
-    $scope.play = true
-    $scope.mute = false
+    $scope.play = false
+    $scope.mute = true
     $scope.loadLevel()
   }
 
@@ -26,12 +26,20 @@ App.controller('mrController', ['$scope', '$timeout', function($scope, $timeout)
 
   //===============================//
   $scope.loadLevel = function(){
-    seed() //temporary auto generate the level
-
-    $scope.player = {type: 'player', i: level.start.i, j: level.start.j}
-    $scope.player.script = sample_script
-    $scope.loading = false
-    $scope.tries = 0
+    //seed() //temporary auto generate the level
+    $http.get('assets/levels/1.json').success(function(lvlData){
+        $scope.level = lvlData;
+        $scope.setPlayGroundSize()
+        $scope.player = {type: 'player', i: $scope.level.start.i, j: $scope.level.start.j, direction: 'north'}
+        $scope.player.script = sample_script
+        $scope.tries = 0
+        $scope.play = true
+        $scope.mute = false
+        $scope.loading = false
+        $scope.$broadcast ('loaded');
+        // Start the timer
+        $timeout(onUpdate, $scope.tickInterval);
+    })
   }
 
   function seed(){
@@ -39,7 +47,7 @@ App.controller('mrController', ['$scope', '$timeout', function($scope, $timeout)
     $scope.level.size.width = 10
     $scope.level.size.height = 10
     for(var j=0;j<10;j++){
-      $scope.level.terrain[j] = new Array
+      $scope.level.terrain[j] = new Array()
       for(var i=0; i<10; i++)$scope.level.terrain[j][i]={i: i, j:j, type: 'path'}
     }
     $scope.level.terrain[4][4].type='mine'
@@ -59,7 +67,7 @@ App.controller('mrController', ['$scope', '$timeout', function($scope, $timeout)
 
   $scope.console = function(){
     if($scope.play){
-      if(!$scope.player.errors || $scope.player.errors.length==0) return 'Running the script...\nTo run a new script you need to Stop and Run it again.';
+      if(!$scope.player.errors || $scope.player.errors.length===0) return 'Running the script...\nTo run a new script you need to Stop and Run it again.';
       else return $scope.player.errors.join('\n')
     }else return 'Press Run to start...'
   }
@@ -69,8 +77,9 @@ App.controller('mrController', ['$scope', '$timeout', function($scope, $timeout)
   }
 
   $scope.setPlayGroundSize = function(){
-    var w=level.size.width*block_px+level.size.width+1
-    var h=level.size.height*(block_px-1)+level.size.height+1
+    if(!$scope.level) return;
+    var w=$scope.level.size.width*block_px+$scope.level.size.width+1
+    var h=$scope.level.size.height*(block_px-1)+$scope.level.size.height+1
     var sw=window.innerWidth;
     var sh=window.innerHeight;
     var ho = $scope.hideToolbar ? 0 : 450
@@ -122,6 +131,4 @@ App.controller('mrController', ['$scope', '$timeout', function($scope, $timeout)
   }
 
   $scope.init = onStart
-  // Start the timer
-  $timeout(onUpdate, $scope.tickInterval);
 }])

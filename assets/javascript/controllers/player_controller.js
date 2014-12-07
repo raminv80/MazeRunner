@@ -1,12 +1,13 @@
 App.controller('playerController', ['$scope', 'scriptCompiler', function($scope, scriptCompiler){
 
   $scope.init_player = function (){
-    if(!$scope.player.direction) $scope.player.direction = 'north'
     if(!$scope.player.origin) $scope.player.origin = {i: $scope.player.i, j: $scope.player.j, direction: $scope.player.direction}
     resetPlayer()
+    $scope.player_initilized = true
   }
 
   $scope.spriteClass = function(player){
+    if(!player) return;
     var classes = [player.direction]
     player = $scope.player
     if(player.compiled_script && player.script_pointer>=0 && player.compiled_script[player.script_pointer]){
@@ -20,9 +21,11 @@ App.controller('playerController', ['$scope', 'scriptCompiler', function($scope,
   }
 
   function updatePlayer(){
+    if(!$scope.player_initilized) return;
     var dh=0;
     var dv=0;
     player = $scope.player
+    if(!player) return;
     updatePlayerState()
     if(player.script_pointer<player.compiled_script.length){
       if(player.script_pointer<0){
@@ -169,13 +172,16 @@ App.controller('playerController', ['$scope', 'scriptCompiler', function($scope,
 
   function compileUserScript(){
     var compile = scriptCompiler($scope.player.script)
-    console.log(compile.result)
     $scope.player.compiled_script = compile.result
     $scope.player.errors = compile.errors
   }
 
   $scope.$on('update', function() {
     updatePlayer()
+  })
+  
+  $scope.$on('loaded', function() {
+    $scope.init_player()
   })
 
   $scope.$on('pause', function() {
