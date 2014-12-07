@@ -9,7 +9,7 @@ App.controller('playerController', ['$scope', 'scriptCompiler', function($scope,
   $scope.spriteClass = function(player){
     var classes = [player.direction]
     player = $scope.player
-    if(player.compiled_script && player.script_pointer>=0){
+    if(player.compiled_script && player.script_pointer>=0 && player.compiled_script[player.script_pointer]){
       if(player.compiled_script[player.script_pointer].command=='forward')
         classes.push('walk')
       if(['east','west'].indexOf(player.direction)>-1)
@@ -31,6 +31,15 @@ App.controller('playerController', ['$scope', 'scriptCompiler', function($scope,
       }
       step = player.compiled_script[player.script_pointer]
       switch(step.command){
+        case 'repeat':
+          if(step.current < step.desired){
+            player.script_pointer = step.index
+            step.current++
+          } else {
+            player.script_pointer++
+            step.current=0
+          }
+        break;
         case 'forward':
           if(step.current < step.desired){
             switch(player.direction){
@@ -96,8 +105,9 @@ App.controller('playerController', ['$scope', 'scriptCompiler', function($scope,
         break;
       }
     }else{
-      if($scope.player.errors.indexOf('Script is finished.')==-1)
-        $scope.player.errors.push('Script is finished. Add more moves or a loop!')
+      s= 'Script is finished. Add more moves or a loop!'
+      if($scope.player.errors.indexOf(s)==-1)
+        $scope.player.errors.push(s)
     }
 
   }
@@ -159,6 +169,7 @@ App.controller('playerController', ['$scope', 'scriptCompiler', function($scope,
 
   function compileUserScript(){
     var compile = scriptCompiler($scope.player.script)
+    console.log(compile.result)
     $scope.player.compiled_script = compile.result
     $scope.player.errors = compile.errors
   }

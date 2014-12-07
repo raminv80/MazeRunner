@@ -2,7 +2,7 @@ App.controller('enemiesController', ['$scope', 'scriptCompiler', function($scope
 
   $scope.spriteClass = function(enemy){
     var classes = [enemy.type, enemy.direction]
-    if(enemy.compiled_script && enemy.script_pointer>=0){
+    if(enemy.compiled_script && enemy.script_pointer>=0 && enemy.compiled_script[enemy.script_pointer]){
       if(enemy.compiled_script[enemy.script_pointer].command=='forward')
         classes.push('walk')
       if(['east','west'].indexOf(enemy.direction)>-1)
@@ -24,6 +24,15 @@ App.controller('enemiesController', ['$scope', 'scriptCompiler', function($scope
     if(enemy.script_pointer<enemy.compiled_script.length){
       step = enemy.compiled_script[enemy.script_pointer]
       switch(step.command){
+        case 'repeat':
+          if(step.current < step.desired){
+            enemy.script_pointer = step.index
+            step.current++
+          } else {
+            enemy.script_pointer++
+            step.current=0
+          }
+        break;
         case 'forward':
           if(step.current < step.desired){
             switch(enemy.direction){

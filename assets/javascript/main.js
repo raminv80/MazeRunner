@@ -25,7 +25,7 @@ var level = {
   end: {i: 1, j: 0},
 }
 
-var sample_script="# Program your character to get home!\n# you can use hash sign to add a comment. leave a space after hash!\n# Available command are: forward <number of moves>, turn <left/right>\n# label <name of label> and goto <name of label> are to create loops.\n# commands are case insensitive\nlabel L1;\nForward 1;\nturn right;\nforward 1;\nturn left;\ngoto L1;"
+var sample_script="# Program your character to get home!\n# you can use hash sign to add a comment. leave a space after hash!\n# Available command are: forward <number of moves>, turn <left/right>\n# label <name of label>, goto <name of label> and\n# repeat <number of cycles> <name of label>.\n# commands are case insensitive\nlabel L1;\nForward 1;\nturn right;\nforward 1;\nturn left;\ngoto L1;"
 
 var App = angular.module('mazeRunner', ['mrCompiler','ui.ace'])
 

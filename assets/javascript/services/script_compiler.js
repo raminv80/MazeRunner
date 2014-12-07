@@ -12,6 +12,7 @@ factory('scriptCompiler', function(){
         segments = lines[i].toLowerCase().trim().split(' ')
         command = segments[0]
         arg = segments[1]
+        arg2 = segments[2]
         switch(command){
           case '#': break;
           case 'turn':
@@ -36,8 +37,21 @@ factory('scriptCompiler', function(){
                 res.push({command: 'goto', index: labels[j].index})
                 found = true
               }
-              if(!found) errors.push("Label '"+arg+"' is not defined!")
+              if(!found) errors.push("Label '"+arg+"' doesn't exist!")
             }else errors.push("Argument is invalid. Please define a label for goto")
+          break;
+          case 'repeat':
+            arg = parseInt(arg)
+            if(arg>0){
+              if(arg2>''){
+                found=false
+                for(j=0;j<labels.length;j++) if(labels[j].name==arg2.toLowerCase()){
+                  res.push({command: 'repeat', index: labels[j].index, desired: arg, current: 0})
+                  found = true
+                }
+                if(!found) errors.push("Label '"+arg+"' doesn't exist!")
+              }else errors.push("Argument is invalid. Please define a label for repeat as second argument")
+            }else errors.push("Argument is invalid. First argument for command 'repeat' should be a positive intege number")
           break;
           case 'wait':
             arg = parseInt(arg)

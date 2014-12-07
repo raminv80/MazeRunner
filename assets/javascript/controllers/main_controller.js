@@ -90,11 +90,9 @@ App.controller('mrController', ['$scope', '$timeout', function($scope, $timeout)
     $scope.tries = 0
     $scope.play = !$scope.play
     if(!$scope.play){
-      console.log('pause')
       music.pause()
       $scope.$broadcast ('pause');
     }else{
-      console.log('play', $scope.mute)
       if(!$scope.mute) music.play()
     }
   }
