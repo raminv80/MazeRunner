@@ -86,10 +86,6 @@ App.controller('mrController', ['$scope', '$timeout', function($scope, $timeout)
     if(obj) return {'left' : obj.i*block_px+obj.i+1+'px', 'top' : obj.j*(block_px-1)+obj.j+1+'px'}
   }
 
-  $scope.playLabel = function(){
-    return $scope.play ? 'fa-stop' : 'fa-play'
-  }
-
   $scope.playPause = function(){
     $scope.tries = 0
     $scope.play = !$scope.play

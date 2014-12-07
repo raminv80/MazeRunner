@@ -15,8 +15,9 @@
     <div class='maze-runer' ng-controller="mrController" ng-init="init()">
       <div class="side-toolbar" ng-show="hideToolbar">
         <div class="toolbar">
-          <button ng-show='hideToolbar' ng-click="toggleToolbar()" class="btn" title="Show toolbar"><li class="fa fa-chevron-right"></li></button>
-          <button ng-click="playPause()" class="btn" title="Run or Pause"><li class="fa" ng-class="playLabel()"></li></button>
+          <button ng-show='hideToolbar' ng-click="toggleToolbar()" class="btn show-toolbar" title="Show toolbar"><li class="fa fa-chevron-right"></li></button>
+          <button ng-click="playPause()" ng-show="play" class="btn stop" title="Stop"><li class="fa fa-stop"></li></button>
+            <button ng-click="playPause()" ng-hide="play" class="btn play" title="Run"><li class="fa fa-play"></li></button>
           <button ng-click="step()" ng-hide="play" class="btn" title="Step"><li class="fa fa-step-forward"></li></button>
           <button ng-click="reset()" ng-hide="play" class="btn" title="Reset" title="Reset"><li class="fa fa-fast-backward"></li></button>
           <button ng-click="toggleMute()" ng-hide="mute" class="btn" title="Mute"><li class="fa fa-volume-off"></li></button>
@@ -26,13 +27,14 @@
       <div class="sidebar" ng-hide='hideToolbar'>
         <div class="tools" ng-class="toolBarState()">
           <div class="toolbar">
-            <button ng-click="playPause()" class="btn" title="Run or Pause"><li class="fa" ng-class="playLabel()"></li></button>
-            <button ng-click="step()" ng-hide="play" class="btn" title="Step"><li class="fa fa-step-forward"></li></button>
-            <button ng-click="reset()" ng-hide="play" class="btn" title="Reset" title="Reset"><li class="fa fa-fast-backward"></li></button>
-            <button ng-click="toggleMute()" ng-hide="mute" class="btn" title="Mute"><li class="fa fa-volume-off"></li></button>
-            <button ng-click="toggleMute()" ng-show="mute" class="btn" title="Unmute"><li class="fa fa-volume-up"></li></button>
-            <button ng-click="player.script=''" class="btn" title="Clear script"><li class="fa fa-trash"></li></button>
-            <button ng-click="toggleToolbar()" class="btn toggle-toolbar" title="Hide toolbar"><li class="fa fa-chevron-left"></li></button>
+            <button ng-click="playPause()" ng-show="play" class="btn stop" title="Stop"><li class="fa fa-stop"></li></button>
+            <button ng-click="playPause()" ng-hide="play" class="btn play" title="Run"><li class="fa fa-play"></li></button>
+            <button ng-click="step()" ng-hide="play" class="btn step" title="Step"><li class="fa fa-step-forward"></li></button>
+            <button ng-click="reset()" ng-hide="play" class="btn reset" title="Reset" title="Reset"><li class="fa fa-fast-backward"></li></button>
+            <button ng-click="toggleMute()" ng-hide="mute" class="btn mute" title="Mute"><li class="fa fa-volume-off"></li></button>
+            <button ng-click="toggleMute()" ng-show="mute" class="btn unmute" title="Unmute"><li class="fa fa-volume-up"></li></button>
+            <button ng-click="player.script=''" class="btn clear" title="Clear script"><li class="fa fa-trash"></li></button>
+            <button ng-click="toggleToolbar()" class="btn hide-toolbar" title="Hide toolbar"><li class="fa fa-chevron-left"></li></button>
           </div>
           <div>
             <div ui-ace ng-model="player.script"></div>
