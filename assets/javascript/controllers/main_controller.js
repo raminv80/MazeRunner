@@ -62,6 +62,13 @@ App.controller('mrController', ['$scope', '$timeout', '$http', function($scope, 
     })
   }
 
+  $scope.loadNextLevel = function(){
+    $scope.current_level = ($scope.current_level+1) % levels.length
+    $scope.play = false
+    $scope.mute = true
+    $scope.loadLevel()
+  }
+
   function seed(){
     $scope.level = level_theme
     $scope.level.size.width = 10

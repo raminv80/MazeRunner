@@ -166,6 +166,7 @@ App.controller('playerController', ['$scope', 'scriptCompiler', function($scope,
       $scope.player.script_pointer = 0
     }
     $scope.player.dead = false
+    $scope.player.win = false
     $scope.enableCelebration = true
     $scope.tries++
     compileUserScript()

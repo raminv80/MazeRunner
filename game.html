@@ -56,10 +56,13 @@
             </div>
           </div>
         </div>
-        <div class="win-dialog animate-show" ng-show="player.win">
-          <img src="assets/images/bleen_animated.gif" class="bleen" />
-          <img src="assets/images/thank-you.gif" class="message" />
-          <button class="btn-action next-level">Goto Next Level <li class="fa fa-arrow-right"></li></button>
+        <div class="win-dialog animate-show" >
+          <div class="cover"></div>
+          <div class="content">
+            <img src="assets/images/bleen_animated.gif" class="bleen" />
+            <img src="assets/images/thank-you.gif" class="message" />
+            <button class="btn-action next-level" ng-click="loadNextLevel()">Goto Next Level <li class="fa fa-arrow-right"></li></button>
+          </div>
         </div>
         <div ng-show="loading">
           <div id="spinningSquaresG">
