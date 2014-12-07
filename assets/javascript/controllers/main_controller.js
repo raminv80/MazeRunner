@@ -33,7 +33,8 @@ App.controller('mrController', ['$scope', '$timeout', '$http', function($scope, 
         $scope.player.script = sample_script
         $scope.tries = 0
         $scope.play = true
-        $scope.mute = false
+        if((navigator.platform.indexOf("iPhone") == -1) && (navigator.platform.indexOf("iPod") == -1))
+          $scope.mute = false
         $scope.loading = false
         $scope.$broadcast ('loaded');
         // Start the timer
