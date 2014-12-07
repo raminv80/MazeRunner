@@ -25,7 +25,7 @@ body{
   display: block;
   padding: 6% 0 50px;
 }
-.intro a.btn{
+.intro a.btn, .btn-action{
   background: #466e82;
   padding: 8px;
   font-size: 16px;
@@ -290,6 +290,37 @@ table tr td.end{
 }
 .btn.stop{
   background: red;
+}
+
+.win-dialog{
+  background: white;
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  left: -webkit-calc(50% - 200px);
+  left: -moz-calc(50% - 200px);
+  left: calc(50% - 200px);
+  top: -webkit-calc(50% - 200px);
+  top: -moz-calc(50% - 200px);
+  top: calc(50% - 200px);
+}
+
+.win-dialog img{display: block;}
+.win-dialog img.bleen{
+  position: relative;
+  left: 60px;
+}
+.win-dialog img.message{
+  margin: 0 auto;
+  width: 110px;
+}
+
+.btn-action.next-level{
+  width: 300px;
+  border: 1px solid #D3F082;
+  background: #6EFF90;
+  color: #333;
+  cursor: pointer;
 }
 
 /*=======spinner========*/
