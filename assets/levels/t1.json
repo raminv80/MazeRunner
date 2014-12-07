@@ -1,0 +1,30 @@
+{
+    "enemies": [],
+    "size": {
+        "width": 2,
+        "height": 1
+    },
+    "terrain": [
+        [
+            {
+                "i": 0,
+                "j": 0,
+                "type": "path"
+            },
+            {
+                "i": 1,
+                "j": 0,
+                "type": "end"
+            },
+        ]
+    ],
+    "start": {
+        "i": 0,
+        "j": 0,
+        "direction": "east"
+    },
+    "end": {
+        "i": 1,
+        "j": 0
+    }
+}
