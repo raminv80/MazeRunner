@@ -26,7 +26,6 @@ App.controller('mrController', ['$scope', '$timeout', '$http', function($scope, 
 
   //===============================//
   $scope.loadLevel = function(){
-    //seed() //temporary auto generate the level
     $http.get('assets/levels/1.json').success(function(lvlData){
         $scope.level = lvlData;
         $scope.setPlayGroundSize()
@@ -39,6 +38,15 @@ App.controller('mrController', ['$scope', '$timeout', '$http', function($scope, 
         $scope.$broadcast ('loaded');
         // Start the timer
         $timeout(onUpdate, $scope.tickInterval);
+    }).error(function(){
+      seed() //temporary auto generate the level
+      $scope.player = {type: 'player', i: level.start.i, j: level.start.j, direction: 'north'}
+      $scope.player.script = sample_script
+      $scope.loading = false
+      $scope.play = true
+      $scope.mute = false
+      $scope.tries = 0
+      $scope.$broadcast ('loaded');
     })
   }
 

@@ -1,0 +1,65 @@
+<html ng-app='mazeRunner'>
+  <head>
+    <script type="text/javascript" src="assets/javascript/bower_components/ace-builds/src-min-noconflict/ace.js"></script>
+    <script type="text/javascript" src="assets/javascript/bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="assets/javascript/bower_components/angular-ui-ace/ui-ace.js"></script>
+    <script src="assets/javascript/main.js"></script>
+    <script src="assets/javascript/controllers/main_controller.js"></script>
+    <script src="assets/javascript/controllers/enemies_controller.js"></script>
+    <script src="assets/javascript/controllers/player_controller.js"></script>
+    <script src="assets/javascript/services/script_compiler.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+  </head>
+  <body>
+    <div class="game-content">
+      <div class='maze-runer' ng-controller="mrController" ng-init="init()">
+        <div class="side-toolbar" ng-show="hideToolbar">
+          <div class="toolbar">
+            <button ng-show='hideToolbar' ng-click="toggleToolbar()" class="btn show-toolbar" title="Show toolbar"><li class="fa fa-chevron-right"></li></button>
+            <button ng-click="playPause()" ng-show="play" class="btn stop" title="Stop"><li class="fa fa-stop"></li></button>
+              <button ng-click="playPause()" ng-hide="play" class="btn play" title="Run"><li class="fa fa-play"></li></button>
+            <button ng-click="step()" ng-hide="play" class="btn" title="Step"><li class="fa fa-step-forward"></li></button>
+            <button ng-click="reset()" ng-hide="play" class="btn" title="Reset"><li class="fa fa-fast-backward"></li></button>
+            <button ng-click="toggleMute()" ng-hide="mute" class="btn" title="Mute"><li class="fa fa-volume-off"></li></button>
+            <button ng-click="toggleMute()" ng-show="mute" class="btn" title="Unmute"><li class="fa fa-volume-up"></li></button>
+          </div>
+        </div>
+        <div class="sidebar" ng-hide='hideToolbar'>
+          <div class="tools" ng-class="toolBarState()">
+            <div class="toolbar">
+              <button ng-click="playPause()" ng-show="play" class="btn stop" title="Stop"><li class="fa fa-stop"></li></button>
+              <button ng-click="playPause()" ng-hide="play" class="btn play" title="Run"><li class="fa fa-play"></li></button>
+              <button ng-click="step()" ng-hide="play" class="btn step" title="Step"><li class="fa fa-step-forward"></li></button>
+              <button ng-click="reset()" ng-hide="play" class="btn reset" title="Reset"><li class="fa fa-fast-backward"></li></button>
+              <button ng-click="toggleMute()" ng-hide="mute" class="btn mute" title="Mute"><li class="fa fa-volume-off"></li></button>
+              <button ng-click="toggleMute()" ng-show="mute" class="btn unmute" title="Unmute"><li class="fa fa-volume-up"></li></button>
+              <button ng-click="player.script=''" class="btn clear" title="Clear script"><li class="fa fa-trash"></li></button>
+              <button ng-click="toggleToolbar()" class="btn hide-toolbar" title="Hide toolbar"><li class="fa fa-chevron-left"></li></button>
+            </div>
+            <div>
+              <div ui-ace ng-model="player.script"></div>
+              <div class="console">{{console()}}</div>
+            </div>
+          </div>
+        </div>
+        <div class="main-content">
+          <div ng-hide="loading">
+            <div class='playground' ng-style="setPlayGroundSize()">
+              <table>
+                <tr ng-repeat="row in level.terrain">
+                  <td ng-repeat="elm in row" ng-class="elementClass(elm)"></td>
+                </tr>
+              </table>
+              <div class="animated" ng-controller="enemiesController" ng-repeat="enemy in level.enemies" ng-class="spriteClass(enemy)" ng-style="setPos(enemy)"></div>
+              <div class="animated player" ng-style="setPos(player)" ng-class="spriteClass(player)" ng-controller="playerController"></div>
+            </div>
+          </div>
+        </div>
+        <div ng-show="loading">
+          Loading the level...
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
