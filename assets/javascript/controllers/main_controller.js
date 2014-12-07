@@ -47,8 +47,10 @@ App.controller('mrController', ['$scope', '$timeout', function($scope, $timeout)
     $scope.level.terrain[5][5].type='mine'
     $scope.level.terrain[6][5].type='mine'
     $scope.level.enemies = [
-      {i:1, j:1, type: 'bug', script: "label l1; turn right; forward 4; turn right; turn right; forward 4; turn right; wait 3; goto l1;"},
+      {i:1, j:1, type: 'bug', script: "label l1; turn right; forward 4; turn right; turn right; forward 4; wait 1; forward 1; wait 2; turn right; turn right; forward 1; turn left; goto l1;"},
       {i:8, j:8, type: 'bug', script: "label l1;turn left; forward 3; turn right; turn right; forward 3; turn left; goto l1"},
+      {i:8, j:1, type: 'bug', script: "label l1; wait 1; goto l1;", direction: "south"},
+      {i:3, j:7, type: 'bug', script: "label l1; forward 3; turn right; forward 4; turn right; forward 9; turn right; forward 4; turn right; forward 6; goto l1;", direction: "west"},
     ]
     $scope.level.start = {i: 0, j:9}
     $scope.level.end = {i:9, j: 0}
@@ -67,7 +69,17 @@ App.controller('mrController', ['$scope', '$timeout', function($scope, $timeout)
   }
 
   $scope.setPlayGroundSize = function(){
-    return {'width' : level.size.width*block_px+level.size.width+1+'px', 'height' : level.size.height*(block_px-1)+level.size.height+1+'px'}
+    var w=level.size.width*block_px+level.size.width+1
+    var h=level.size.height*(block_px-1)+level.size.height+1
+    var sw=window.innerWidth;
+    var sh=window.innerHeight;
+    var ho = $scope.hideToolbar ? 0 : 450
+    return {
+      'width' : w+'px',
+      'height' : h+'px',
+      'left': Math.round((sw-ho-w)/2)+ho+'px',
+      'top':  Math.round((sh-h)/2)+'px',
+    }
   }
 
   $scope.setPos = function(obj){
@@ -75,7 +87,7 @@ App.controller('mrController', ['$scope', '$timeout', function($scope, $timeout)
   }
 
   $scope.playLabel = function(){
-    return $scope.play ? 'Stop' : 'Run'
+    return $scope.play ? 'fa-stop' : 'fa-play'
   }
 
   $scope.playPause = function(){
@@ -108,6 +120,11 @@ App.controller('mrController', ['$scope', '$timeout', function($scope, $timeout)
 
   $scope.toolBarState = function(){
     return $scope.hideToolbar ? 'hide' : 'show'
+  }
+
+  $scope.toggleToolbar = function(){
+    $scope.hideToolbar=!$scope.hideToolbar
+    $scope.setPlayGroundSize()
   }
 
   $scope.init = onStart

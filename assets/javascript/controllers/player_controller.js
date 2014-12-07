@@ -97,7 +97,7 @@ App.controller('playerController', ['$scope', 'scriptCompiler', function($scope,
       }
     }else{
       if($scope.player.errors.indexOf('Script is finished.')==-1)
-        $scope.player.errors.push('Script is finished.')
+        $scope.player.errors.push('Script is finished. Add more moves or a loop!')
     }
 
   }
