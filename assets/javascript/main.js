@@ -40,6 +40,7 @@ var kick = new Audio('assets/sounds/RightHook.mp3')
 var fall = new Audio('assets/sounds/GlassBreak.mp3')
 var tada = new Audio('assets/sounds/TaDa.mp3')
 electrify.volume = 0.3
+tada.volume = 0.5
 music.volume=0.3
 music.loop = true
 

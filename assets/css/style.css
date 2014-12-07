@@ -304,6 +304,20 @@ table tr td.end{
   top: -moz-calc(50% - 200px);
   top: calc(50% - 200px);
 }
+.animate-show {
+  opacity: 1;
+}
+.animate-show.ng-hide-add.ng-hide-add-active,
+.animate-show.ng-hide-remove.ng-hide-remove-active {
+  -webkit-transition: opacity 0.3s linear;
+  -moz-transition: opacity 0.3s linear;
+  -o-transition: opacity 0.3s linear;
+  transition: opacity 0.3s linear;
+}
+
+.animate-show.ng-hide {
+  opacity: 0;
+}
 
 .win-dialog img{display: block;}
 .win-dialog img.bleen{
