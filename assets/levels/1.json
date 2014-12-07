@@ -659,7 +659,11 @@
     ],
     "start": {
         "i": 0,
-        "j": 9
+        "j": 9,
+        "direction": "north",
+        "default_script": "# Program your character to get home!\n# you can use hash sign to add a comment. leave a space after hash!\n# Available command are: forward <number of moves>, turn <left/right>\n# label <name of label>, goto <name of label> and\n# repeat <number of cycles> <name of label>.\n# commands are case insensitive\nlabel L1;\nForward 1;\nturn right;\nforward 1;\nturn left;\ngoto L1;",
+        "mute": "false",
+        "play": "true"
     },
     "end": {
         "i": 9,

@@ -15,13 +15,16 @@
                 "i": 1,
                 "j": 0,
                 "type": "end"
-            },
+            }
         ]
     ],
     "start": {
         "i": 0,
         "j": 0,
-        "direction": "east"
+        "direction": "east",
+        "default_script": "# red hat girl: Hi Dear!\n# Would you please help me get home?\n# my house is just one block ahead!\n\n# Voice in my head: #This must be my lucky day!\n# Hurry up and click on the Run button!\n\nforward 1",
+        "mute": false,
+        "play": false
     },
     "end": {
         "i": 1,

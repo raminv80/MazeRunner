@@ -133,6 +133,9 @@ App.controller('playerController', ['$scope', 'scriptCompiler', function($scope,
 
   function celebrate(){
     if(!$scope.mute) tada.play()
+    s= 'TADA! Congradulations!'
+    if($scope.player.errors.indexOf(s)==-1)
+      $scope.player.errors.push(s)
   }
 
   function deadlyCollision(){

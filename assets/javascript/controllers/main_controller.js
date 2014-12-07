@@ -1,8 +1,10 @@
 App.controller('mrController', ['$scope', '$timeout', '$http', function($scope, $timeout, $http){
   var block_px=30
   $scope.tickInterval = 300 //ms
+  $scope.current_level = 0
 
   $scope.loading = true
+  $scope.seconds = 0
 
   //=========game events============//
   var onStart = function(){
@@ -26,37 +28,42 @@ App.controller('mrController', ['$scope', '$timeout', '$http', function($scope, 
 
   //===============================//
   $scope.loadLevel = function(){
-    $http.get('assets/levels/1.json').success(function(lvlData){
+    level_json = levels[$scope.current_level].json
+    $http.get(level_json).success(function(lvlData){
+        $scope.seconds=0
         $scope.level = lvlData;
         $scope.setPlayGroundSize()
         $scope.player = {
           type: 'player',
           i: $scope.level.start.i, j: $scope.level.start.j,
-          direction: $scope.level.start ? $scope.level.start : 'north'
+          direction: $scope.level.start.direction ? $scope.level.start.direction : 'north'
         }
-        $scope.player.script = sample_script
+        $scope.player.script = $scope.level.start.default_script
         $scope.tries = 0
-        $scope.play = true
+        $scope.play = $scope.level.start.play
         if((navigator.platform.indexOf("iPhone") == -1) && (navigator.platform.indexOf("iPod") == -1))
-          $scope.mute = false
+          $scope.mute = $scope.level.start.mute
+        if(!$scope.mute) music.play()
         $scope.loading = false
         $scope.$broadcast ('loaded');
         // Start the timer
         $timeout(onUpdate, $scope.tickInterval);
     }).error(function(){
+      console.log('Error loading '+level_json+', falling back to auto seed the level!')
       seed() //temporary auto generate the level
-      $scope.player = {type: 'player', i: level.start.i, j: level.start.j, direction: 'north'}
+      $scope.player = {type: 'player', i: level_theme.start.i, j: level_theme.start.j, direction: 'north'}
       $scope.player.script = sample_script
       $scope.loading = false
       $scope.play = true
       $scope.mute = false
       $scope.tries = 0
+      $scope.seconds = 0
       $scope.$broadcast ('loaded');
     })
   }
 
   function seed(){
-    $scope.level = level
+    $scope.level = level_theme
     $scope.level.size.width = 10
     $scope.level.size.height = 10
     for(var j=0;j<10;j++){
@@ -126,6 +133,7 @@ App.controller('mrController', ['$scope', '$timeout', '$http', function($scope, 
   }
 
   $scope.step = function(){
+    $scope.seconds++
     $scope.$broadcast ('update');
     updateGameState()
   }

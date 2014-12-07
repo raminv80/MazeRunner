@@ -1,5 +1,5 @@
 //sample of level structure date (in this app I have a seed function that over rides this structure for test):
-var level = {
+var level_theme = {
   //coordinate {i:0, j:0} is top left
   //coordinate i is column index
   //coordinate j is row index
@@ -25,7 +25,12 @@ var level = {
   end: {i: 1, j: 0},
 }
 
-var sample_script="# Program your character to get home!\n# you can use hash sign to add a comment. leave a space after hash!\n# Available command are: forward <number of moves>, turn <left/right>\n# label <name of label>, goto <name of label> and\n# repeat <number of cycles> <name of label>.\n# commands are case insensitive\nlabel L1;\nForward 1;\nturn right;\nforward 1;\nturn left;\ngoto L1;"
+sample_script = "# Program your character to get home!\n# you can use hash sign to add a comment. leave a space after hash!\n# Available command are: forward <number of moves>, turn <left/right>\n# label <name of label>, goto <name of label> and\n# repeat <number of cycles> <name of label>.\n# commands are case insensitive\nlabel L1;\nForward 1;\nturn right;\nforward 1;\nturn left;\ngoto L1;"
+
+var levels = [
+  {json: 'assets/levels/t1.json', category: 'tutorial'},
+  {json: 'assets/levels/1.json', category: 'medium'}
+]
 
 var App = angular.module('mazeRunner', ['mrCompiler','ui.ace'])
 
@@ -37,4 +42,3 @@ var tada = new Audio('assets/sounds/TaDa.mp3')
 electrify.volume = 0.3
 music.volume=0.3
 music.loop = true
-music.play()
