@@ -1,8 +1,8 @@
 <html ng-app='mazeRunner'>
   <head>
-    <script type="text/javascript" src="assets/javascript/bower_components/ace-builds/src-min-noconflict/ace.js"></script>
-    <script type="text/javascript" src="assets/javascript/bower_components/angular/angular.min.js"></script>
-    <script type="text/javascript" src="assets/javascript/bower_components/angular-ui-ace/ui-ace.js"></script>
+    <script type="text/javascript" src="/game/assets/javascript/bower_components/ace-builds/src-min-noconflict/ace.js"></script>
+    <script type="text/javascript" src="/game/assets/javascript/bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="/game/assets/javascript/bower_components/angular-ui-ace/ui-ace.js"></script>
     <script src="/game/assets/javascript/main.js"></script>
     <script src="/game/assets/javascript/controllers/main_controller.js"></script>
     <script src="/game/assets/javascript/controllers/enemies_controller.js"></script>
@@ -59,8 +59,8 @@
         <div class="win-dialog animate-show" ng-show="player.win" >
           <div class="cover"></div>
           <div class="content">
-            <img src="assets/images/bleen_animated.gif" class="bleen" />
-            <img src="assets/images/thank-you.gif" class="message" />
+            <img src="/game/assets/images/bleen_animated.gif" class="bleen" />
+            <img src="/game/assets/images/thank-you.gif" class="message" />
             <button class="btn-action next-level" ng-click="loadNextLevel()">Goto Next Level <li class="fa fa-arrow-right"></li></button>
           </div>
         </div>
