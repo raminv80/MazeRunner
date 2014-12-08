@@ -28,9 +28,14 @@ gem 'spring',        group: :development
 
 gem 'omniauth-facebook'
 
+gem 'rainbows'
+gem 'eventmachine'
+
 group :development do
   gem 'foreman'
   gem 'thin'
+  gem 'capistrano-devops'
+  gem 'capistrano-rails'
 end
 
 group :development, :test do
