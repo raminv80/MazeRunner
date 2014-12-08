@@ -28,6 +28,9 @@ To create loops use:
 ![Imgur](http://i.imgur.com/3hR4Iye.png)
 ![Imgur](http://i.imgur.com/yeUVR8m.png)
 
+[Watch on youtube](https://www.youtube.com/watch?v=dAiwA1uT_WM)
+
+
 ## Technical description
 
 Levels can be easily created and added to the game. Levels are loaded as json objects and the game parses them to generate each level. The game is developed using Angular.js framework and html5/css3 tricks. 
