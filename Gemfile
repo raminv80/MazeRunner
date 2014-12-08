@@ -36,6 +36,7 @@ group :development do
   gem 'thin'
   gem 'capistrano-devops'
   gem 'capistrano-rails'
+  gem 'capistrano-bundler'
 end
 
 group :development, :test do
