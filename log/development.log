@@ -1,0 +1,1716 @@
+  [1m[36m (0.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.4ms)[0m  select sqlite_version(*)
+  [1m[36m (0.7ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateLevels (20141206070326)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "levels" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "description" text, "hint" varchar(255), "width" integer, "height" integer, "start_x" integer, "start_y" integer, "end_x" integer, "end_y" integer, "initial_angle" integer, "terrain" text, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20141206070326"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+Migrating to CreateAccounts (20141206071605)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "accounts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20141206071605"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/" for 127.0.0.1 at 2014-12-06 16:33:47 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/tristan/.rvm/gems/ruby-2.1.4/gems/railties-4.1.4/lib/rails/templates/rails/welcome/index.html.erb (1.9ms)
+Completed 200 OK in 19ms (Views: 9.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/game" for 127.0.0.1 at 2014-12-06 16:33:55 +0800
+
+ActionController::RoutingError (No route matches [GET] "/game"):
+  actionpack (4.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.4) lib/rails/engine.rb:514:in `call'
+  railties (4.1.4) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  thin (1.6.3) lib/thin/connection.rb:86:in `block in pre_process'
+  thin (1.6.3) lib/thin/connection.rb:84:in `catch'
+  thin (1.6.3) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.3) lib/thin/connection.rb:53:in `process'
+  thin (1.6.3) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run'
+  thin (1.6.3) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.3) lib/thin/server.rb:162:in `start'
+  rack (1.5.2) lib/rack/handler/thin.rb:16:in `run'
+  rack (1.5.2) lib/rack/server.rb:264:in `start'
+  railties (4.1.4) lib/rails/commands/server.rb:69:in `start'
+  railties (4.1.4) lib/rails/commands/commands_tasks.rb:81:in `block in server'
+  railties (4.1.4) lib/rails/commands/commands_tasks.rb:76:in `tap'
+  railties (4.1.4) lib/rails/commands/commands_tasks.rb:76:in `server'
+  railties (4.1.4) lib/rails/commands/commands_tasks.rb:40:in `run_command!'
+  railties (4.1.4) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:8:in `require'
+  bin/rails:8:in `<top (required)>'
+  spring (1.2.0) lib/spring/client/rails.rb:27:in `load'
+  spring (1.2.0) lib/spring/client/rails.rb:27:in `call'
+  spring (1.2.0) lib/spring/client/command.rb:7:in `call'
+  spring (1.2.0) lib/spring/client.rb:26:in `run'
+  spring (1.2.0) bin/spring:48:in `<top (required)>'
+  spring (1.2.0) lib/spring/binstub.rb:11:in `load'
+  spring (1.2.0) lib/spring/binstub.rb:11:in `<top (required)>'
+  bin/spring:16:in `require'
+  bin/spring:16:in `<top (required)>'
+  bin/rails:3:in `load'
+  bin/rails:3:in `<main>'
+
+
+  Rendered /Users/tristan/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /Users/tristan/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.8ms)
+  Rendered /Users/tristan/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (7.2ms)
+  Rendered /Users/tristan/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (28.5ms)
+
+
+Started GET "/game" for 127.0.0.1 at 2014-12-06 16:34:14 +0800
+
+ActionController::RoutingError (No route matches [GET] "/game"):
+  actionpack (4.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.4) lib/rails/engine.rb:514:in `call'
+  railties (4.1.4) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  thin (1.6.3) lib/thin/connection.rb:86:in `block in pre_process'
+  thin (1.6.3) lib/thin/connection.rb:84:in `catch'
+  thin (1.6.3) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.3) lib/thin/connection.rb:53:in `process'
+  thin (1.6.3) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run'
+  thin (1.6.3) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.3) lib/thin/server.rb:162:in `start'
+  rack (1.5.2) lib/rack/handler/thin.rb:16:in `run'
+  rack (1.5.2) lib/rack/server.rb:264:in `start'
+  railties (4.1.4) lib/rails/commands/server.rb:69:in `start'
+  railties (4.1.4) lib/rails/commands/commands_tasks.rb:81:in `block in server'
+  railties (4.1.4) lib/rails/commands/commands_tasks.rb:76:in `tap'
+  railties (4.1.4) lib/rails/commands/commands_tasks.rb:76:in `server'
+  railties (4.1.4) lib/rails/commands/commands_tasks.rb:40:in `run_command!'
+  railties (4.1.4) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:8:in `require'
+  bin/rails:8:in `<top (required)>'
+  spring (1.2.0) lib/spring/client/rails.rb:27:in `load'
+  spring (1.2.0) lib/spring/client/rails.rb:27:in `call'
+  spring (1.2.0) lib/spring/client/command.rb:7:in `call'
+  spring (1.2.0) lib/spring/client.rb:26:in `run'
+  spring (1.2.0) bin/spring:48:in `<top (required)>'
+  spring (1.2.0) lib/spring/binstub.rb:11:in `load'
+  spring (1.2.0) lib/spring/binstub.rb:11:in `<top (required)>'
+  bin/spring:16:in `require'
+  bin/spring:16:in `<top (required)>'
+  bin/rails:3:in `load'
+  bin/rails:3:in `<main>'
+
+
+  Rendered /Users/tristan/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /Users/tristan/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.1ms)
+  Rendered /Users/tristan/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendered /Users/tristan/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (18.9ms)
+
+
+Started GET "/game" for 127.0.0.1 at 2014-12-06 16:34:29 +0800
+Processing by GameController#index as HTML
+  Rendered game/index.html.erb within layouts/application (0.3ms)
+Completed 500 Internal Server Error in 4ms
+
+SyntaxError (/Users/tristan/Sites/maze-runner/app/views/layouts/application.html.erb:15: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+...th Facebook', ''/auth/facebook' );@output_buffer.safe_append...
+...                               ^
+/Users/tristan/Sites/maze-runner/app/views/layouts/application.html.erb:20: syntax error, unexpected '<', expecting ')'
+</body>
+ ^
+/Users/tristan/Sites/maze-runner/app/views/layouts/application.html.erb:21: unknown regexp options - htl
+/Users/tristan/Sites/maze-runner/app/views/layouts/application.html.erb:22: unterminated string meets end of file
+/Users/tristan/Sites/maze-runner/app/views/layouts/application.html.erb:22: syntax error, unexpected end-of-input, expecting ')'):
+  app/views/layouts/application.html.erb:15: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+  app/views/layouts/application.html.erb:20: syntax error, unexpected '<', expecting ')'
+  app/views/layouts/application.html.erb:21: unknown regexp options - htl
+  app/views/layouts/application.html.erb:22: unterminated string meets end of file
+  app/views/layouts/application.html.erb:22: syntax error, unexpected end-of-input, expecting ')'
+
+
+  Rendered /Users/tristan/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /Users/tristan/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/tristan/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/tristan/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.7ms)
+
+
+Started GET "/game" for 127.0.0.1 at 2014-12-06 16:35:14 +0800
+Processing by GameController#index as HTML
+  Rendered game/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 927ms (Views: 926.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/game.css?body=1" for 127.0.0.1 at 2014-12-06 16:35:15 +0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-12-06 16:35:15 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-06 16:35:15 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-12-06 16:35:15 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-06 16:35:15 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-12-06 16:35:15 +0800
+
+
+Started GET "/assets/game.js?body=1" for 127.0.0.1 at 2014-12-06 16:35:15 +0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-12-06 16:35:15 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-12-06 16:35:15 +0800
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2014-12-06 16:35:18 +0800
+(facebook) Request phase initiated.
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2014-12-06 16:35:19 +0800
+(facebook) Request phase initiated.
+
+
+Started GET "/game" for 127.0.0.1 at 2014-12-06 16:36:03 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by GameController#index as HTML
+  Rendered game/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 103ms (Views: 94.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/game.css?body=1" for 127.0.0.1 at 2014-12-06 16:36:04 +0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-12-06 16:36:04 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-06 16:36:04 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-12-06 16:36:04 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-06 16:36:04 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-12-06 16:36:04 +0800
+
+
+Started GET "/assets/game.js?body=1" for 127.0.0.1 at 2014-12-06 16:36:04 +0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-12-06 16:36:04 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-12-06 16:36:04 +0800
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2014-12-06 16:36:08 +0800
+(facebook) Request phase initiated.
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2014-12-06 16:36:09 +0800
+(facebook) Request phase initiated.
+
+
+Started GET "/auth/facebook/callback?code=AQD49JtuphGB9w7g3smWWli7xfeitzlzNC6MvVHTcUR4kOPhN4veeGvifvN_Ww-EKZWRrMmE60LYT-xeYjkRMSPJgV5vE0BtHFt7FPfxTkfzXD-rDkJaS3yhhxh2_VFDuPZDIvdzI0pCeqxGPthY-TPBVpeu1TKaWWdPE5mAy456X7ww5IY4bqTk0AnvLEXcE3RUlRkLlPhOJivig13e_Q_uRKsd9YAL8GNTskquCHwFnGnsrqkamnVub08nMlRwKMGPkYsGWatndVGILcOyWPths5YtFkKcU10VGUgqs3W0updX-zoLxxhiDpZi0LfvX1zfTbp_FsOEt8iioqaHcAd-9fgBtlOK7BIIKJykfHURSw&state=7b2f6a57790affc76eb08860ef98fcd7f4b2f6fcc7a17c46" for 127.0.0.1 at 2014-12-06 16:36:20 +0800
+(facebook) Callback phase initiated.
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"AQD49JtuphGB9w7g3smWWli7xfeitzlzNC6MvVHTcUR4kOPhN4veeGvifvN_Ww-EKZWRrMmE60LYT-xeYjkRMSPJgV5vE0BtHFt7FPfxTkfzXD-rDkJaS3yhhxh2_VFDuPZDIvdzI0pCeqxGPthY-TPBVpeu1TKaWWdPE5mAy456X7ww5IY4bqTk0AnvLEXcE3RUlRkLlPhOJivig13e_Q_uRKsd9YAL8GNTskquCHwFnGnsrqkamnVub08nMlRwKMGPkYsGWatndVGILcOyWPths5YtFkKcU10VGUgqs3W0updX-zoLxxhiDpZi0LfvX1zfTbp_FsOEt8iioqaHcAd-9fgBtlOK7BIIKJykfHURSw", "state"=>"7b2f6a57790affc76eb08860ef98fcd7f4b2f6fcc7a17c46", "provider"=>"facebook"}
+  [1m[35mAccount Load (0.6ms)[0m  SELECT  "accounts".* FROM "accounts"  WHERE "accounts"."provider" = 'facebook' AND "accounts"."uid" = '10152921269877922'  ORDER BY "accounts"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.3ms)[0m  INSERT INTO "accounts" ("created_at", "name", "provider", "uid", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-12-06 08:36:25.399806"], ["name", "parasquid"], ["provider", "facebook"], ["uid", "10152921269877922"], ["updated_at", "2014-12-06 08:36:25.399806"]]
+  [1m[36m (3.4ms)[0m  [1mcommit transaction[0m
+Completed 500 Internal Server Error in 32ms
+
+NameError (undefined local variable or method `root_url' for #<SessionsController:0x007fe3b314c870>):
+  app/controllers/sessions_controller.rb:5:in `create'
+
+
+  Rendered /Users/tristan/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered /Users/tristan/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/tristan/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/tristan/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (24.3ms)
+
+
+Started GET "/auth/facebook/callback?code=AQD49JtuphGB9w7g3smWWli7xfeitzlzNC6MvVHTcUR4kOPhN4veeGvifvN_Ww-EKZWRrMmE60LYT-xeYjkRMSPJgV5vE0BtHFt7FPfxTkfzXD-rDkJaS3yhhxh2_VFDuPZDIvdzI0pCeqxGPthY-TPBVpeu1TKaWWdPE5mAy456X7ww5IY4bqTk0AnvLEXcE3RUlRkLlPhOJivig13e_Q_uRKsd9YAL8GNTskquCHwFnGnsrqkamnVub08nMlRwKMGPkYsGWatndVGILcOyWPths5YtFkKcU10VGUgqs3W0updX-zoLxxhiDpZi0LfvX1zfTbp_FsOEt8iioqaHcAd-9fgBtlOK7BIIKJykfHURSw&state=7b2f6a57790affc76eb08860ef98fcd7f4b2f6fcc7a17c46" for 127.0.0.1 at 2014-12-06 16:36:42 +0800
+
+ArgumentError (controller name should not start with a slash):
+  config/routes.rb:8:in `block in <top (required)>'
+  config/routes.rb:1:in `<top (required)>'
+
+
+  Rendered /Users/tristan/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /Users/tristan/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/tristan/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/tristan/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.0ms)
+
+
+Started GET "/auth/facebook/callback?code=AQD49JtuphGB9w7g3smWWli7xfeitzlzNC6MvVHTcUR4kOPhN4veeGvifvN_Ww-EKZWRrMmE60LYT-xeYjkRMSPJgV5vE0BtHFt7FPfxTkfzXD-rDkJaS3yhhxh2_VFDuPZDIvdzI0pCeqxGPthY-TPBVpeu1TKaWWdPE5mAy456X7ww5IY4bqTk0AnvLEXcE3RUlRkLlPhOJivig13e_Q_uRKsd9YAL8GNTskquCHwFnGnsrqkamnVub08nMlRwKMGPkYsGWatndVGILcOyWPths5YtFkKcU10VGUgqs3W0updX-zoLxxhiDpZi0LfvX1zfTbp_FsOEt8iioqaHcAd-9fgBtlOK7BIIKJykfHURSw&state=7b2f6a57790affc76eb08860ef98fcd7f4b2f6fcc7a17c46" for 127.0.0.1 at 2014-12-06 16:36:49 +0800
+(facebook) Callback phase initiated.
+(facebook) Authentication failure! invalid_credentials: OAuth2::Error, : 
+{"error":{"message":"This authorization code has been used.","type":"OAuthException","code":100}}
+
+OAuth2::Error (: 
+{"error":{"message":"This authorization code has been used.","type":"OAuthException","code":100}}):
+  oauth2 (1.0.0) lib/oauth2/client.rb:113:in `request'
+  oauth2 (1.0.0) lib/oauth2/client.rb:138:in `get_token'
+  oauth2 (1.0.0) lib/oauth2/strategy/auth_code.rb:29:in `get_token'
+  omniauth-oauth2 (1.2.0) lib/omniauth/strategies/oauth2.rb:93:in `build_access_token'
+  omniauth-facebook (2.0.0) lib/omniauth/strategies/facebook.rb:114:in `build_access_token'
+  omniauth-oauth2 (1.2.0) lib/omniauth/strategies/oauth2.rb:75:in `callback_phase'
+  omniauth-facebook (2.0.0) lib/omniauth/strategies/facebook.rb:72:in `block in callback_phase'
+  omniauth-facebook (2.0.0) lib/omniauth/strategies/facebook.rb:135:in `with_authorization_code!'
+  omniauth-facebook (2.0.0) lib/omniauth/strategies/facebook.rb:71:in `callback_phase'
+  omniauth (1.2.2) lib/omniauth/strategy.rb:227:in `callback_call'
+  omniauth (1.2.2) lib/omniauth/strategy.rb:184:in `call!'
+  omniauth (1.2.2) lib/omniauth/strategy.rb:164:in `call'
+  omniauth (1.2.2) lib/omniauth/builder.rb:59:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.4) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.4) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.4) lib/rails/engine.rb:514:in `call'
+  railties (4.1.4) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  thin (1.6.3) lib/thin/connection.rb:86:in `block in pre_process'
+  thin (1.6.3) lib/thin/connection.rb:84:in `catch'
+  thin (1.6.3) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.3) lib/thin/connection.rb:53:in `process'
+  thin (1.6.3) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run'
+  thin (1.6.3) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.3) lib/thin/server.rb:162:in `start'
+  rack (1.5.2) lib/rack/handler/thin.rb:16:in `run'
+  rack (1.5.2) lib/rack/server.rb:264:in `start'
+  railties (4.1.4) lib/rails/commands/server.rb:69:in `start'
+  railties (4.1.4) lib/rails/commands/commands_tasks.rb:81:in `block in server'
+  railties (4.1.4) lib/rails/commands/commands_tasks.rb:76:in `tap'
+  railties (4.1.4) lib/rails/commands/commands_tasks.rb:76:in `server'
+  railties (4.1.4) lib/rails/commands/commands_tasks.rb:40:in `run_command!'
+  railties (4.1.4) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:8:in `require'
+  bin/rails:8:in `<top (required)>'
+  spring (1.2.0) lib/spring/client/rails.rb:27:in `load'
+  spring (1.2.0) lib/spring/client/rails.rb:27:in `call'
+  spring (1.2.0) lib/spring/client/command.rb:7:in `call'
+  spring (1.2.0) lib/spring/client.rb:26:in `run'
+  spring (1.2.0) bin/spring:48:in `<top (required)>'
+  spring (1.2.0) lib/spring/binstub.rb:11:in `load'
+  spring (1.2.0) lib/spring/binstub.rb:11:in `<top (required)>'
+  bin/spring:16:in `require'
+  bin/spring:16:in `<top (required)>'
+  bin/rails:3:in `load'
+  bin/rails:3:in `<main>'
+
+
+  Rendered /Users/tristan/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /Users/tristan/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/tristan/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/tristan/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-12-06 16:36:59 +0800
+Processing by GameController#index as HTML
+  Rendered game/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 50ms (Views: 49.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/game.css?body=1" for 127.0.0.1 at 2014-12-06 16:36:59 +0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-12-06 16:36:59 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-06 16:36:59 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-12-06 16:36:59 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-06 16:36:59 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-12-06 16:36:59 +0800
+
+
+Started GET "/assets/game.js?body=1" for 127.0.0.1 at 2014-12-06 16:36:59 +0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-12-06 16:36:59 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-12-06 16:36:59 +0800
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2014-12-06 16:37:01 +0800
+(facebook) Request phase initiated.
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2014-12-06 16:37:01 +0800
+(facebook) Request phase initiated.
+
+
+Started GET "/auth/facebook/callback?code=AQBRVx-idIGf8i1jXuEE5qrE81Y09ygzqx2U7gi9nUoW0ZgumdNRbBICy9HOBzd4h8wJ8EO3bnan74cq6m3Aqt5awF-2GiCCh5YAXJ_to-DYUsqXMuQCMmhzlBm8gaL6Yg49xXebcgPYtahZvAjV2j7YBBnGZ8XIFVcXawIWlZj6SsvCssTNWafR6lHSe1IU-6o6y3KsQ4LYwl183wahV-RAbTxp4DitZwHYfkuTMkqStUfWip4gUN57XP_ZwsQfa4_6veoolZsy0L3PfQ7onu_1CkoJQCXQhigbLwi8btoUxpQnKXAwsi8UeXUs_rdeTWPp41n7RSqx_jPIUAZkTSS2D5yRH4QGINM6tAvZVqg3FQ&state=b51655161c85bedcbb3e301ab39531a7126df62030630402" for 127.0.0.1 at 2014-12-06 16:37:02 +0800
+(facebook) Callback phase initiated.
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"AQBRVx-idIGf8i1jXuEE5qrE81Y09ygzqx2U7gi9nUoW0ZgumdNRbBICy9HOBzd4h8wJ8EO3bnan74cq6m3Aqt5awF-2GiCCh5YAXJ_to-DYUsqXMuQCMmhzlBm8gaL6Yg49xXebcgPYtahZvAjV2j7YBBnGZ8XIFVcXawIWlZj6SsvCssTNWafR6lHSe1IU-6o6y3KsQ4LYwl183wahV-RAbTxp4DitZwHYfkuTMkqStUfWip4gUN57XP_ZwsQfa4_6veoolZsy0L3PfQ7onu_1CkoJQCXQhigbLwi8btoUxpQnKXAwsi8UeXUs_rdeTWPp41n7RSqx_jPIUAZkTSS2D5yRH4QGINM6tAvZVqg3FQ", "state"=>"b51655161c85bedcbb3e301ab39531a7126df62030630402", "provider"=>"facebook"}
+  [1m[35mAccount Load (0.1ms)[0m  SELECT  "accounts".* FROM "accounts"  WHERE "accounts"."provider" = 'facebook' AND "accounts"."uid" = '10152921269877922'  ORDER BY "accounts"."id" ASC LIMIT 1
+Redirected to http://lvh.me:3000/
+Completed 302 Found in 6ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-12-06 16:37:05 +0800
+Processing by GameController#index as HTML
+  Rendered game/index.html.erb within layouts/application (0.0ms)
+Completed 500 Internal Server Error in 73ms
+
+ActionView::Template::Error (uninitialized constant ApplicationController::User):
+     8: </head>
+     9: <body>
+    10: 
+    11: <% if current_user %>
+    12:     Signed in as <%= current_user.name %>!
+    13:     <%= link_to 'Sign out', signout_path %>
+    14: <% else %>
+  app/controllers/application_controller.rb:9:in `current_user'
+  app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb___3868064600928915167_70308012106320'
+
+
+  Rendered /Users/tristan/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/tristan/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/tristan/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (15.5ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20141206084255)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20141206084255"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.6ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "users" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2014-12-06 08:44:20.612901"], ["updated_at", "2014-12-06 08:44:20.612901"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddUserIdToAccount (20141206084546)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (1.3ms)[0m  [1mALTER TABLE "accounts" ADD "user_id" integer[0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.2ms)[0m  [1mCREATE  INDEX "index_accounts_on_user_id" ON "accounts" ("user_id")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20141206084546"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_accounts_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_accounts_on_user_id' AND type='index'
+[0m
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2014-12-06 08:45:58.807946"], ["updated_at", "2014-12-06 08:45:58.807946"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mAccount Load (0.2ms)[0m  [1mSELECT "accounts".* FROM "accounts"  WHERE "accounts"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"   ORDER BY "users"."id" DESC LIMIT 1
+  [1m[36mAccount Load (0.1ms)[0m  [1mSELECT "accounts".* FROM "accounts"  WHERE "accounts"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[35mAccount Load (0.2ms)[0m  SELECT "accounts".* FROM "accounts"
+
+
+Started GET "/" for 127.0.0.1 at 2014-12-06 17:09:56 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by GameController#index as HTML
+  Rendered game/index.html.erb within layouts/application (0.3ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 500 Internal Server Error in 98ms
+
+ActionView::Template::Error (undefined method `user' for #<User:0x007fe3b80fc078>):
+     8: </head>
+     9: <body>
+    10: 
+    11: <% if current_user %>
+    12:     Signed in as <%= current_user.name %>!
+    13:     <%= link_to 'Sign out', signout_path %>
+    14: <% else %>
+  app/controllers/application_controller.rb:9:in `current_user'
+  app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb___3868064600928915167_70308012106320'
+
+
+  Rendered /Users/tristan/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/tristan/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/tristan/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (15.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-12-06 17:10:39 +0800
+Processing by GameController#index as HTML
+  Rendered game/index.html.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 500 Internal Server Error in 127ms
+
+ActionView::Template::Error (undefined method `name' for #<User:0x007fe3b25bcbb8>):
+     9: <body>
+    10: 
+    11: <% if current_user %>
+    12:     Signed in as <%= current_user.name %>!
+    13:     <%= link_to 'Sign out', signout_path %>
+    14: <% else %>
+    15:     <%= link_to 'Sign in with Facebook', '/auth/facebook' %>
+  app/views/layouts/application.html.erb:12:in `_app_views_layouts_application_html_erb___3868064600928915167_70308012106320'
+
+
+  Rendered /Users/tristan/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /Users/tristan/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/tristan/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (13.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-12-06 17:12:06 +0800
+Processing by GameController#index as HTML
+  Rendered game/index.html.erb within layouts/application (0.1ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mAccount Load (0.1ms)[0m  [1mSELECT  "accounts".* FROM "accounts"  WHERE "accounts"."user_id" = ?  ORDER BY "accounts"."id" ASC LIMIT 1[0m  [["user_id", 1]]
+Completed 500 Internal Server Error in 70ms
+
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+     9: <body>
+    10: 
+    11: <% if current_user %>
+    12:     Signed in as <%= current_user.name %>!
+    13:     <%= link_to 'Sign out', signout_path %>
+    14: <% else %>
+    15:     <%= link_to 'Sign in with Facebook', '/auth/facebook' %>
+  app/models/user.rb:5:in `name'
+  app/views/layouts/application.html.erb:12:in `_app_views_layouts_application_html_erb___3868064600928915167_70308012106320'
+
+
+  Rendered /Users/tristan/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/tristan/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/tristan/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (11.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-12-06 17:12:23 +0800
+Processing by GameController#index as HTML
+  Rendered game/index.html.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mAccount Load (0.1ms)[0m  [1mSELECT  "accounts".* FROM "accounts"  WHERE "accounts"."user_id" = ?  ORDER BY "accounts"."id" ASC LIMIT 1[0m  [["user_id", 1]]
+Completed 500 Internal Server Error in 59ms
+
+ActionView::Template::Error (wrong number of arguments (0 for 1+)):
+     9: <body>
+    10: 
+    11: <% if current_user %>
+    12:     Signed in as <%= current_user.name %>!
+    13:     <%= link_to 'Sign out', signout_path %>
+    14: <% else %>
+    15:     <%= link_to 'Sign in with Facebook', '/auth/facebook' %>
+  app/models/user.rb:5:in `new'
+  app/models/user.rb:5:in `name'
+  app/views/layouts/application.html.erb:12:in `_app_views_layouts_application_html_erb___3868064600928915167_70308012106320'
+
+
+  Rendered /Users/tristan/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/tristan/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/tristan/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (10.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-12-06 17:12:30 +0800
+Processing by GameController#index as HTML
+  Rendered game/index.html.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mAccount Load (0.1ms)[0m  [1mSELECT  "accounts".* FROM "accounts"  WHERE "accounts"."user_id" = ?  ORDER BY "accounts"."id" ASC LIMIT 1[0m  [["user_id", 1]]
+Completed 500 Internal Server Error in 53ms
+
+ActionView::Template::Error (no implicit conversion of Hash into String):
+     9: <body>
+    10: 
+    11: <% if current_user %>
+    12:     Signed in as <%= current_user.name %>!
+    13:     <%= link_to 'Sign out', signout_path %>
+    14: <% else %>
+    15:     <%= link_to 'Sign in with Facebook', '/auth/facebook' %>
+  app/models/user.rb:5:in `new'
+  app/models/user.rb:5:in `name'
+  app/views/layouts/application.html.erb:12:in `_app_views_layouts_application_html_erb___3868064600928915167_70308012106320'
+
+
+  Rendered /Users/tristan/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/tristan/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/tristan/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (10.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-12-06 17:12:46 +0800
+Processing by GameController#index as HTML
+  Rendered game/index.html.erb within layouts/application (0.1ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mAccount Load (0.1ms)[0m  [1mSELECT  "accounts".* FROM "accounts"  WHERE "accounts"."user_id" = ?  ORDER BY "accounts"."id" ASC LIMIT 1[0m  [["user_id", 1]]
+Completed 200 OK in 51ms (Views: 49.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/game.css?body=1" for 127.0.0.1 at 2014-12-06 17:12:47 +0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-12-06 17:12:47 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-06 17:12:47 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-12-06 17:12:47 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-06 17:12:47 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-12-06 17:12:47 +0800
+
+
+Started GET "/assets/game.js?body=1" for 127.0.0.1 at 2014-12-06 17:12:47 +0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-12-06 17:12:47 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-12-06 17:12:47 +0800
+
+
+Started GET "/" for 127.0.0.1 at 2014-12-06 17:12:56 +0800
+Processing by GameController#index as HTML
+  Rendered game/index.html.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mAccount Load (0.1ms)[0m  [1mSELECT  "accounts".* FROM "accounts"  WHERE "accounts"."user_id" = ?  ORDER BY "accounts"."id" ASC LIMIT 1[0m  [["user_id", 1]]
+Completed 200 OK in 52ms (Views: 50.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/game.css?body=1" for 127.0.0.1 at 2014-12-06 17:12:56 +0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-12-06 17:12:56 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-06 17:12:56 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-12-06 17:12:56 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-06 17:12:56 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-12-06 17:12:56 +0800
+
+
+Started GET "/assets/game.js?body=1" for 127.0.0.1 at 2014-12-06 17:12:57 +0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-12-06 17:12:57 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-12-06 17:12:57 +0800
+
+
+Started GET "/signout" for 127.0.0.1 at 2014-12-06 17:12:58 +0800
+
+ActionController::RoutingError (No route matches [GET] "/signout"):
+  actionpack (4.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.4) lib/rails/engine.rb:514:in `call'
+  railties (4.1.4) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  thin (1.6.3) lib/thin/connection.rb:86:in `block in pre_process'
+  thin (1.6.3) lib/thin/connection.rb:84:in `catch'
+  thin (1.6.3) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.3) lib/thin/connection.rb:53:in `process'
+  thin (1.6.3) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run'
+  thin (1.6.3) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.3) lib/thin/server.rb:162:in `start'
+  rack (1.5.2) lib/rack/handler/thin.rb:16:in `run'
+  rack (1.5.2) lib/rack/server.rb:264:in `start'
+  railties (4.1.4) lib/rails/commands/server.rb:69:in `start'
+  railties (4.1.4) lib/rails/commands/commands_tasks.rb:81:in `block in server'
+  railties (4.1.4) lib/rails/commands/commands_tasks.rb:76:in `tap'
+  railties (4.1.4) lib/rails/commands/commands_tasks.rb:76:in `server'
+  railties (4.1.4) lib/rails/commands/commands_tasks.rb:40:in `run_command!'
+  railties (4.1.4) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:8:in `require'
+  bin/rails:8:in `<top (required)>'
+  spring (1.2.0) lib/spring/client/rails.rb:27:in `load'
+  spring (1.2.0) lib/spring/client/rails.rb:27:in `call'
+  spring (1.2.0) lib/spring/client/command.rb:7:in `call'
+  spring (1.2.0) lib/spring/client.rb:26:in `run'
+  spring (1.2.0) bin/spring:48:in `<top (required)>'
+  spring (1.2.0) lib/spring/binstub.rb:11:in `load'
+  spring (1.2.0) lib/spring/binstub.rb:11:in `<top (required)>'
+  bin/spring:16:in `require'
+  bin/spring:16:in `<top (required)>'
+  bin/rails:3:in `load'
+  bin/rails:3:in `<main>'
+
+
+  Rendered /Users/tristan/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /Users/tristan/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.0ms)
+  Rendered /Users/tristan/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (8.4ms)
+  Rendered /Users/tristan/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (32.8ms)
+
+
+Started GET "/signout" for 127.0.0.1 at 2014-12-06 17:12:58 +0800
+
+ActionController::RoutingError (No route matches [GET] "/signout"):
+  actionpack (4.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.4) lib/rails/engine.rb:514:in `call'
+  railties (4.1.4) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  thin (1.6.3) lib/thin/connection.rb:86:in `block in pre_process'
+  thin (1.6.3) lib/thin/connection.rb:84:in `catch'
+  thin (1.6.3) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.3) lib/thin/connection.rb:53:in `process'
+  thin (1.6.3) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run'
+  thin (1.6.3) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.3) lib/thin/server.rb:162:in `start'
+  rack (1.5.2) lib/rack/handler/thin.rb:16:in `run'
+  rack (1.5.2) lib/rack/server.rb:264:in `start'
+  railties (4.1.4) lib/rails/commands/server.rb:69:in `start'
+  railties (4.1.4) lib/rails/commands/commands_tasks.rb:81:in `block in server'
+  railties (4.1.4) lib/rails/commands/commands_tasks.rb:76:in `tap'
+  railties (4.1.4) lib/rails/commands/commands_tasks.rb:76:in `server'
+  railties (4.1.4) lib/rails/commands/commands_tasks.rb:40:in `run_command!'
+  railties (4.1.4) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:8:in `require'
+  bin/rails:8:in `<top (required)>'
+  spring (1.2.0) lib/spring/client/rails.rb:27:in `load'
+  spring (1.2.0) lib/spring/client/rails.rb:27:in `call'
+  spring (1.2.0) lib/spring/client/command.rb:7:in `call'
+  spring (1.2.0) lib/spring/client.rb:26:in `run'
+  spring (1.2.0) bin/spring:48:in `<top (required)>'
+  spring (1.2.0) lib/spring/binstub.rb:11:in `load'
+  spring (1.2.0) lib/spring/binstub.rb:11:in `<top (required)>'
+  bin/spring:16:in `require'
+  bin/spring:16:in `<top (required)>'
+  bin/rails:3:in `load'
+  bin/rails:3:in `<main>'
+
+
+  Rendered /Users/tristan/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/tristan/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.1ms)
+  Rendered /Users/tristan/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.3ms)
+  Rendered /Users/tristan/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (18.5ms)
+
+
+Started GET "/signout" for 127.0.0.1 at 2014-12-06 17:13:14 +0800
+
+ActionController::RoutingError (No route matches [GET] "/signout"):
+  actionpack (4.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.4) lib/rails/engine.rb:514:in `call'
+  railties (4.1.4) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  thin (1.6.3) lib/thin/connection.rb:86:in `block in pre_process'
+  thin (1.6.3) lib/thin/connection.rb:84:in `catch'
+  thin (1.6.3) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.3) lib/thin/connection.rb:53:in `process'
+  thin (1.6.3) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run'
+  thin (1.6.3) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.3) lib/thin/server.rb:162:in `start'
+  rack (1.5.2) lib/rack/handler/thin.rb:16:in `run'
+  rack (1.5.2) lib/rack/server.rb:264:in `start'
+  railties (4.1.4) lib/rails/commands/server.rb:69:in `start'
+  railties (4.1.4) lib/rails/commands/commands_tasks.rb:81:in `block in server'
+  railties (4.1.4) lib/rails/commands/commands_tasks.rb:76:in `tap'
+  railties (4.1.4) lib/rails/commands/commands_tasks.rb:76:in `server'
+  railties (4.1.4) lib/rails/commands/commands_tasks.rb:40:in `run_command!'
+  railties (4.1.4) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:8:in `require'
+  bin/rails:8:in `<top (required)>'
+  spring (1.2.0) lib/spring/client/rails.rb:27:in `load'
+  spring (1.2.0) lib/spring/client/rails.rb:27:in `call'
+  spring (1.2.0) lib/spring/client/command.rb:7:in `call'
+  spring (1.2.0) lib/spring/client.rb:26:in `run'
+  spring (1.2.0) bin/spring:48:in `<top (required)>'
+  spring (1.2.0) lib/spring/binstub.rb:11:in `load'
+  spring (1.2.0) lib/spring/binstub.rb:11:in `<top (required)>'
+  bin/spring:16:in `require'
+  bin/spring:16:in `<top (required)>'
+  bin/rails:3:in `load'
+  bin/rails:3:in `<main>'
+
+
+  Rendered /Users/tristan/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /Users/tristan/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.0ms)
+  Rendered /Users/tristan/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.2ms)
+  Rendered /Users/tristan/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (18.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-12-06 17:13:16 +0800
+Processing by GameController#index as HTML
+  Rendered game/index.html.erb within layouts/application (0.1ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mAccount Load (0.1ms)[0m  [1mSELECT  "accounts".* FROM "accounts"  WHERE "accounts"."user_id" = ?  ORDER BY "accounts"."id" ASC LIMIT 1[0m  [["user_id", 1]]
+Completed 200 OK in 56ms (Views: 54.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/game.css?body=1" for 127.0.0.1 at 2014-12-06 17:13:16 +0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-12-06 17:13:16 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-06 17:13:16 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-12-06 17:13:16 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-06 17:13:17 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-12-06 17:13:17 +0800
+
+
+Started GET "/assets/game.js?body=1" for 127.0.0.1 at 2014-12-06 17:13:17 +0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-12-06 17:13:17 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-12-06 17:13:17 +0800
+
+
+Started DELETE "/signout" for 127.0.0.1 at 2014-12-06 17:13:18 +0800
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"pe6sm1StpwDwX2yMZKBQcNNGyEe1MqBYv2Bqu/uYtxw="}
+Redirected to http://lvh.me:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-12-06 17:13:18 +0800
+Processing by GameController#index as HTML
+  Rendered game/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 44ms (Views: 43.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/game.css?body=1" for 127.0.0.1 at 2014-12-06 17:13:19 +0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-12-06 17:13:19 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-06 17:13:19 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-12-06 17:13:19 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-06 17:13:19 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-12-06 17:13:19 +0800
+
+
+Started GET "/assets/game.js?body=1" for 127.0.0.1 at 2014-12-06 17:13:19 +0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-12-06 17:13:19 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-12-06 17:13:19 +0800
+  [1m[36m (1.0ms)[0m  [1mCREATE TABLE "accounts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "user_id" integer) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.9ms)[0m  [1mCREATE  INDEX "index_accounts_on_user_id" ON "accounts" ("user_id")[0m
+  [1m[35m (0.7ms)[0m  CREATE TABLE "levels" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "description" text, "hint" varchar(255), "width" integer, "height" integer, "start_x" integer, "start_y" integer, "end_x" integer, "end_y" integer, "initial_angle" integer, "terrain" text, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.7ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.5ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20141206084546')[0m
+  [1m[35m (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20141206070326')
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20141206071605')[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20141206084255')
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/" for 127.0.0.1 at 2014-12-06 17:19:15 +0800
+Processing by GameController#index as HTML
+  Rendered game/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 96ms (Views: 92.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/game.css?body=1" for 127.0.0.1 at 2014-12-06 17:19:15 +0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-12-06 17:19:15 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-06 17:19:15 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-12-06 17:19:15 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-06 17:19:15 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-12-06 17:19:16 +0800
+
+
+Started GET "/assets/game.js?body=1" for 127.0.0.1 at 2014-12-06 17:19:16 +0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-12-06 17:19:16 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-12-06 17:19:16 +0800
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2014-12-06 17:19:18 +0800
+(facebook) Request phase initiated.
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2014-12-06 17:19:20 +0800
+(facebook) Request phase initiated.
+
+
+Started GET "/auth/facebook/callback?code=AQAU1Uv1BLIU06HsQ4WfBGscfLSIpy9LTuW0xuEWZtgxBia2-FTMaSaYemD5fAGsPQLY2QHJrYYqSg4xp8oDpY3JpijGysrBz9z0WNhojZi2KUYgdWHR880PvuIA5lUj_vecrGFqP2dWKcg8Cu6mp3YQwxF8ehHb-qAX0AjPSyT_htyZZFF0-Z2BnmXeXwNynQE_x8kI6JFCDi5B8TerhZOMivK1wWqsXOM7CRET95E4eamBDV_cxU-NNOlZcxY5OCL50FrxLmBq6trlVIJzR65H4uS0vyFEg8vV6mxmIcCCKDol8bkDuemYqLP6eMav4cRwL-T_rVrb1EQf3YETdIK4FlBp_X2FDqbVAZlw539lSg&state=c24555971f5e65d9ad742ecc0ec10c9ba4b3859ed6afd4a8" for 127.0.0.1 at 2014-12-06 17:19:21 +0800
+(facebook) Callback phase initiated.
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"AQAU1Uv1BLIU06HsQ4WfBGscfLSIpy9LTuW0xuEWZtgxBia2-FTMaSaYemD5fAGsPQLY2QHJrYYqSg4xp8oDpY3JpijGysrBz9z0WNhojZi2KUYgdWHR880PvuIA5lUj_vecrGFqP2dWKcg8Cu6mp3YQwxF8ehHb-qAX0AjPSyT_htyZZFF0-Z2BnmXeXwNynQE_x8kI6JFCDi5B8TerhZOMivK1wWqsXOM7CRET95E4eamBDV_cxU-NNOlZcxY5OCL50FrxLmBq6trlVIJzR65H4uS0vyFEg8vV6mxmIcCCKDol8bkDuemYqLP6eMav4cRwL-T_rVrb1EQf3YETdIK4FlBp_X2FDqbVAZlw539lSg", "state"=>"c24555971f5e65d9ad742ecc0ec10c9ba4b3859ed6afd4a8", "provider"=>"facebook"}
+  [1m[35mAccount Load (0.7ms)[0m  SELECT  "accounts".* FROM "accounts"  WHERE "accounts"."provider" = 'facebook' AND "accounts"."uid" = '10152921269877922'  ORDER BY "accounts"."id" ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2014-12-06 09:19:25.013295"], ["updated_at", "2014-12-06 09:19:25.013295"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://lvh.me:3000/
+Completed 302 Found in 33ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-12-06 17:19:25 +0800
+Processing by GameController#index as HTML
+  Rendered game/index.html.erb within layouts/application (0.1ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mAccount Load (0.1ms)[0m  [1mSELECT  "accounts".* FROM "accounts"  WHERE "accounts"."user_id" = ?  ORDER BY "accounts"."id" ASC LIMIT 1[0m  [["user_id", 3]]
+Completed 200 OK in 99ms (Views: 98.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/game.css?body=1" for 127.0.0.1 at 2014-12-06 17:19:25 +0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-12-06 17:19:25 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-06 17:19:25 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-12-06 17:19:25 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-06 17:19:25 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-12-06 17:19:25 +0800
+
+
+Started GET "/assets/game.js?body=1" for 127.0.0.1 at 2014-12-06 17:19:26 +0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-12-06 17:19:26 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-12-06 17:19:26 +0800
+  [1m[36mUser Load (1.8ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mAccount Load (0.4ms)[0m  SELECT "accounts".* FROM "accounts"
+
+
+Started DELETE "/signout" for 127.0.0.1 at 2014-12-06 22:47:03 +0800
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"pe6sm1StpwDwX2yMZKBQcNNGyEe1MqBYv2Bqu/uYtxw="}
+Redirected to http://lvh.me:3000/
+Completed 302 Found in 7ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-12-06 22:47:03 +0800
+Processing by GameController#index as HTML
+  Rendered game/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 70ms (Views: 68.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/game.css?body=1" for 127.0.0.1 at 2014-12-06 22:47:03 +0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-12-06 22:47:03 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-06 22:47:03 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-12-06 22:47:03 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-06 22:47:03 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-12-06 22:47:03 +0800
+
+
+Started GET "/assets/game.js?body=1" for 127.0.0.1 at 2014-12-06 22:47:03 +0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-12-06 22:47:03 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-12-06 22:47:03 +0800
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2014-12-06 22:47:05 +0800
+(facebook) Request phase initiated.
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2014-12-06 22:47:06 +0800
+(facebook) Request phase initiated.
+
+
+Started GET "/auth/facebook/callback?code=AQAYQU3O4QeC-qXiTPWiy5Jc3biZK8d1Pb_VbtrF_FwL0BmU0OgM1xLuVgIN_dOv2fQfNwc--oHBQYwqJvMNoiL8ITuuHP23Z9OTDhcTYTNmAxU-10GpjkQ-px2GAhXhHNd0PAC9YQy1qYpOu1qh6OBxEqnOo17stOHWXF4DH24r9KNmQC1s_zwzEPc4E3dBmtYhBBr9pzoHRKcWf2mMp-_9bwXPqed4Ox30ZPnmyozNMYJpfL0jmS06Kq7AR2vAr8iouEgZdkM00u0lubr4QzhTUEFX5m8mSYs8SpHFOWiYXv5PEbqpEeWXey8fh9K9PzFxx5cCJzGf8Jq2t-AQoJdBo57J7Z8ZT3pjJ0Pm8MXgEw&state=c4e2d98e9cbe27411b15a0f1698a5d748ed4cbe2f3e49315" for 127.0.0.1 at 2014-12-06 22:47:06 +0800
+(facebook) Callback phase initiated.
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"AQAYQU3O4QeC-qXiTPWiy5Jc3biZK8d1Pb_VbtrF_FwL0BmU0OgM1xLuVgIN_dOv2fQfNwc--oHBQYwqJvMNoiL8ITuuHP23Z9OTDhcTYTNmAxU-10GpjkQ-px2GAhXhHNd0PAC9YQy1qYpOu1qh6OBxEqnOo17stOHWXF4DH24r9KNmQC1s_zwzEPc4E3dBmtYhBBr9pzoHRKcWf2mMp-_9bwXPqed4Ox30ZPnmyozNMYJpfL0jmS06Kq7AR2vAr8iouEgZdkM00u0lubr4QzhTUEFX5m8mSYs8SpHFOWiYXv5PEbqpEeWXey8fh9K9PzFxx5cCJzGf8Jq2t-AQoJdBo57J7Z8ZT3pjJ0Pm8MXgEw", "state"=>"c4e2d98e9cbe27411b15a0f1698a5d748ed4cbe2f3e49315", "provider"=>"facebook"}
+Completed 500 Internal Server Error in 74ms
+
+
+Started GET "/" for 127.0.0.1 at 2014-12-06 22:47:37 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by GameController#index as HTML
+  Rendered game/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 93ms (Views: 84.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/game.css?body=1" for 127.0.0.1 at 2014-12-06 22:47:38 +0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-12-06 22:47:38 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-06 22:47:38 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-12-06 22:47:38 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-06 22:47:38 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-12-06 22:47:38 +0800
+
+
+Started GET "/assets/game.js?body=1" for 127.0.0.1 at 2014-12-06 22:47:38 +0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-12-06 22:47:38 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-12-06 22:47:38 +0800
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2014-12-06 22:47:41 +0800
+(facebook) Request phase initiated.
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2014-12-06 22:47:41 +0800
+(facebook) Request phase initiated.
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2014-12-06 22:49:57 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+(facebook) Request phase initiated.
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2014-12-06 22:49:59 +0800
+(facebook) Request phase initiated.
+
+
+Started GET "/auth/facebook/callback?code=AQCcv2zlOdtB3NjKrJA52ObFnRQyq_sL-YnczIY3R_sIMqvZIwumIcs7Zgc2kEMaaacp_qnjXhuw4QXC31AqXVxDw9d8HYE4TAisXr8Ej902MtZ2MC7d9TXfgnx9yM6CJBJ1EOgPTeLeBD5-K3bIiok8rfc-iTNeMCNqYA7HRPaywza2P5GY-mLKmqRE-t800RPsgPnWvl6GW2NiiRU4R8O9-2-8ArmOISC4peyfXJRmBFTpTF2U7JJ-TqK4ZgsaIVOsn7v8fQ9ags-WsO_kXHUxquk1EN4oMgugcgdRDMhlnzHYEZCXEjo-mQY0gmoSewvFPeeEtSNh-X7cW6wvqG_vJhL1ZIDML1jS9reyDd5ALw&state=ba246682bf1c88b772b17c181fe9bf992f2327c709fbd8a7" for 127.0.0.1 at 2014-12-06 22:50:00 +0800
+(facebook) Callback phase initiated.
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"AQCcv2zlOdtB3NjKrJA52ObFnRQyq_sL-YnczIY3R_sIMqvZIwumIcs7Zgc2kEMaaacp_qnjXhuw4QXC31AqXVxDw9d8HYE4TAisXr8Ej902MtZ2MC7d9TXfgnx9yM6CJBJ1EOgPTeLeBD5-K3bIiok8rfc-iTNeMCNqYA7HRPaywza2P5GY-mLKmqRE-t800RPsgPnWvl6GW2NiiRU4R8O9-2-8ArmOISC4peyfXJRmBFTpTF2U7JJ-TqK4ZgsaIVOsn7v8fQ9ags-WsO_kXHUxquk1EN4oMgugcgdRDMhlnzHYEZCXEjo-mQY0gmoSewvFPeeEtSNh-X7cW6wvqG_vJhL1ZIDML1jS9reyDd5ALw", "state"=>"ba246682bf1c88b772b17c181fe9bf992f2327c709fbd8a7", "provider"=>"facebook"}
+  [1m[35mAccount Load (0.5ms)[0m  SELECT  "accounts".* FROM "accounts"  WHERE "accounts"."provider" = 'facebook' AND "accounts"."uid" = '10152921269877922'  ORDER BY "accounts"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "accounts" ("created_at", "name", "provider", "uid", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-12-06 14:50:11.175572"], ["name", "parasquid"], ["provider", "facebook"], ["uid", "10152921269877922"], ["updated_at", "2014-12-06 14:50:11.175572"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mAccount Load (0.2ms)[0m  SELECT  "accounts".* FROM "accounts"  WHERE "accounts"."provider" = 'facebook' AND "accounts"."uid" = '10152921269877922'  ORDER BY "accounts"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "accounts".* FROM "accounts"  WHERE "accounts"."provider" = 'facebook' AND "accounts"."uid" = '10152921269877922'  ORDER BY "accounts"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "users" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2014-12-06 14:51:02.025973"], ["updated_at", "2014-12-06 14:51:02.025973"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36mAccount Load (0.3ms)[0m  [1mSELECT  "accounts".* FROM "accounts"  WHERE "accounts"."provider" = 'facebook' AND "accounts"."uid" = '10152921269877922'  ORDER BY "accounts"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2014-12-06 14:51:15.263009"], ["updated_at", "2014-12-06 14:51:15.263009"]]
+  [1m[35m (2.8ms)[0m  commit transaction
+Redirected to http://lvh.me:3000/
+Completed 302 Found in 70338ms (ActiveRecord: 7.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-12-06 22:51:15 +0800
+Processing by GameController#index as HTML
+  Rendered game/index.html.erb within layouts/application (1.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mAccount Load (0.2ms)[0m  SELECT  "accounts".* FROM "accounts"  WHERE "accounts"."user_id" = ?  ORDER BY "accounts"."id" ASC LIMIT 1  [["user_id", 2]]
+Completed 200 OK in 110ms (Views: 109.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/game.css?body=1" for 127.0.0.1 at 2014-12-06 22:51:15 +0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-12-06 22:51:15 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-06 22:51:15 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-12-06 22:51:15 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-06 22:51:15 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-12-06 22:51:15 +0800
+
+
+Started GET "/assets/game.js?body=1" for 127.0.0.1 at 2014-12-06 22:51:16 +0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-12-06 22:51:16 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-12-06 22:51:16 +0800
+
+
+Started DELETE "/signout" for 127.0.0.1 at 2014-12-06 22:51:32 +0800
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"pe6sm1StpwDwX2yMZKBQcNNGyEe1MqBYv2Bqu/uYtxw="}
+Redirected to http://lvh.me:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-12-06 22:51:32 +0800
+Processing by GameController#index as HTML
+  Rendered game/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 43ms (Views: 42.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/game.css?body=1" for 127.0.0.1 at 2014-12-06 22:51:33 +0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-12-06 22:51:33 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-06 22:51:33 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-12-06 22:51:33 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-06 22:51:33 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-12-06 22:51:33 +0800
+
+
+Started GET "/assets/game.js?body=1" for 127.0.0.1 at 2014-12-06 22:51:33 +0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-12-06 22:51:33 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-12-06 22:51:33 +0800
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2014-12-06 22:51:35 +0800
+(facebook) Request phase initiated.
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2014-12-06 22:51:35 +0800
+(facebook) Request phase initiated.
+
+
+Started GET "/auth/facebook/callback?code=AQDAcjCTxDx54BSiScrLXBt3tMmsbdtrjEsw6MejjAsFW8qXPyX6N6bd8k0x78XOxBJFkh6nnmAsSywpBeCCkOOIUMy3SyH-U4qUAY-eAHGfE1zVP1fh7kxzrPX3zR4G5XgRD4Fm-FJDPw15iQ4s5R6XQY4a9mYIifmjWY42iqiFeR8SJx7b6SkDxovCpLCHB5JgOHv4HOCqda7_AOIHI042LYnju27fYnubf33bF8f-6g7nXIxGsHUmmRrAsHUOzKDyS331Xlg58cvWJVCI9TLsm3yY6O3ng0JQh9TkegEPdVysZWeqewFgV7eIbFPn-BYJKSMx9CKMxHn9q8Ty-bnE9ghqcrQ1k71Hy_OJ_oglqQ&state=c82f5c5bb0835c3e15c0afbe6cae0655cf44e4f8ddb973b4" for 127.0.0.1 at 2014-12-06 22:51:36 +0800
+(facebook) Callback phase initiated.
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"AQDAcjCTxDx54BSiScrLXBt3tMmsbdtrjEsw6MejjAsFW8qXPyX6N6bd8k0x78XOxBJFkh6nnmAsSywpBeCCkOOIUMy3SyH-U4qUAY-eAHGfE1zVP1fh7kxzrPX3zR4G5XgRD4Fm-FJDPw15iQ4s5R6XQY4a9mYIifmjWY42iqiFeR8SJx7b6SkDxovCpLCHB5JgOHv4HOCqda7_AOIHI042LYnju27fYnubf33bF8f-6g7nXIxGsHUmmRrAsHUOzKDyS331Xlg58cvWJVCI9TLsm3yY6O3ng0JQh9TkegEPdVysZWeqewFgV7eIbFPn-BYJKSMx9CKMxHn9q8Ty-bnE9ghqcrQ1k71Hy_OJ_oglqQ", "state"=>"c82f5c5bb0835c3e15c0afbe6cae0655cf44e4f8ddb973b4", "provider"=>"facebook"}
+  [1m[36mAccount Load (0.1ms)[0m  [1mSELECT  "accounts".* FROM "accounts"  WHERE "accounts"."provider" = 'facebook' AND "accounts"."uid" = '10152921269877922'  ORDER BY "accounts"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2014-12-06 14:51:41.110617"], ["updated_at", "2014-12-06 14:51:41.110617"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "accounts"
+  [1m[36mAccount Load (0.2ms)[0m  [1mSELECT  "accounts".* FROM "accounts"   ORDER BY "accounts"."id" ASC LIMIT 1[0m
+Redirected to http://lvh.me:3000/
+Completed 302 Found in 83920ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-12-06 22:53:05 +0800
+Processing by GameController#index as HTML
+  Rendered game/index.html.erb within layouts/application (0.1ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mAccount Load (0.1ms)[0m  [1mSELECT  "accounts".* FROM "accounts"  WHERE "accounts"."user_id" = ?  ORDER BY "accounts"."id" ASC LIMIT 1[0m  [["user_id", 3]]
+Completed 200 OK in 96ms (Views: 94.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/game.css?body=1" for 127.0.0.1 at 2014-12-06 22:53:05 +0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-12-06 22:53:05 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-06 22:53:05 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-12-06 22:53:05 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-06 22:53:05 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-12-06 22:53:05 +0800
+
+
+Started GET "/assets/game.js?body=1" for 127.0.0.1 at 2014-12-06 22:53:05 +0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-12-06 22:53:05 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-12-06 22:53:05 +0800
+  [1m[36m (1.0ms)[0m  [1mCREATE TABLE "accounts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "user_id" integer) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.7ms)[0m  [1mCREATE  INDEX "index_accounts_on_user_id" ON "accounts" ("user_id")[0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "levels" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "description" text, "hint" varchar(255), "width" integer, "height" integer, "start_x" integer, "start_y" integer, "end_x" integer, "end_y" integer, "initial_angle" integer, "terrain" text, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.7ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20141206084546')[0m
+  [1m[35m (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20141206070326')
+  [1m[36m (0.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20141206071605')[0m
+  [1m[35m (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20141206084255')
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started DELETE "/signout" for 127.0.0.1 at 2014-12-06 22:53:13 +0800
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"pe6sm1StpwDwX2yMZKBQcNNGyEe1MqBYv2Bqu/uYtxw="}
+Redirected to http://lvh.me:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-12-06 22:53:14 +0800
+Processing by GameController#index as HTML
+  Rendered game/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 46ms (Views: 45.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/game.css?body=1" for 127.0.0.1 at 2014-12-06 22:53:14 +0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-12-06 22:53:14 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-06 22:53:14 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-12-06 22:53:14 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-06 22:53:14 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-12-06 22:53:14 +0800
+
+
+Started GET "/assets/game.js?body=1" for 127.0.0.1 at 2014-12-06 22:53:14 +0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-12-06 22:53:14 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-12-06 22:53:14 +0800
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2014-12-06 22:53:40 +0800
+(facebook) Request phase initiated.
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2014-12-06 22:53:42 +0800
+(facebook) Request phase initiated.
+
+
+Started GET "/auth/facebook/callback?code=AQBd4EJ3ZsJQyM7K3AcFQstnNu4EokUntEe0KPVn0Qh60JniVWzYNc56E3adBwJ0glct7hyQ7Bos74aIIZHgeJ1ezzlMI2eAQLpFvvha10RBqgQnRDXN3wp36Ya1Crf39nXwkSqLlhhUJsSfE2YkcevDrDAXLkkacC6HXETfjrJwC9TbdiT5PNdxNH6V2fa2sLWQhoHqccCoaY11CJ4AD9u0bV9syENtzFHmyt-U84roOpuXI49NqgI7l-ahxwPbxjtsTXSNpbsDzHTQUqJ6cEPRww_1oHZhaEqVBdZLSqXQJ2y5j2HLlnlTKuhtUYz-VthniV4hNAMwmFyL-k7Lcg7u_mCT5oP5odKmnLaEASGKzg&state=0f1b739ba77c875ddc37b23a5faca38995814a9cb3a3523e" for 127.0.0.1 at 2014-12-06 22:53:43 +0800
+(facebook) Callback phase initiated.
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"AQBd4EJ3ZsJQyM7K3AcFQstnNu4EokUntEe0KPVn0Qh60JniVWzYNc56E3adBwJ0glct7hyQ7Bos74aIIZHgeJ1ezzlMI2eAQLpFvvha10RBqgQnRDXN3wp36Ya1Crf39nXwkSqLlhhUJsSfE2YkcevDrDAXLkkacC6HXETfjrJwC9TbdiT5PNdxNH6V2fa2sLWQhoHqccCoaY11CJ4AD9u0bV9syENtzFHmyt-U84roOpuXI49NqgI7l-ahxwPbxjtsTXSNpbsDzHTQUqJ6cEPRww_1oHZhaEqVBdZLSqXQJ2y5j2HLlnlTKuhtUYz-VthniV4hNAMwmFyL-k7Lcg7u_mCT5oP5odKmnLaEASGKzg", "state"=>"0f1b739ba77c875ddc37b23a5faca38995814a9cb3a3523e", "provider"=>"facebook"}
+  [1m[35mAccount Load (0.3ms)[0m  SELECT  "accounts".* FROM "accounts"  WHERE "accounts"."provider" = 'facebook' AND "accounts"."uid" = '10152921269877922'  ORDER BY "accounts"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "accounts" ("created_at", "name", "provider", "uid", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-12-06 14:53:47.249679"], ["name", "parasquid"], ["provider", "facebook"], ["uid", "10152921269877922"], ["updated_at", "2014-12-06 14:53:47.249679"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2014-12-06 14:53:47.258440"], ["updated_at", "2014-12-06 14:53:47.258440"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Redirected to http://lvh.me:3000/
+Completed 302 Found in 21ms (ActiveRecord: 3.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-12-06 22:53:47 +0800
+Processing by GameController#index as HTML
+  Rendered game/index.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mAccount Load (0.1ms)[0m  SELECT  "accounts".* FROM "accounts"  WHERE "accounts"."user_id" = ?  ORDER BY "accounts"."id" ASC LIMIT 1  [["user_id", 1]]
+Completed 200 OK in 52ms (Views: 51.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/game.css?body=1" for 127.0.0.1 at 2014-12-06 22:53:47 +0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-12-06 22:53:47 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-06 22:53:47 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-12-06 22:53:47 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-06 22:53:47 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-12-06 22:53:47 +0800
+
+
+Started GET "/assets/game.js?body=1" for 127.0.0.1 at 2014-12-06 22:53:48 +0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-12-06 22:53:48 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-12-06 22:53:48 +0800
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  [1m[35mAccount Load (0.3ms)[0m  SELECT  "accounts".* FROM "accounts"   ORDER BY "accounts"."id" ASC LIMIT 1
+
+
+Started DELETE "/signout" for 127.0.0.1 at 2014-12-06 22:54:29 +0800
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"pe6sm1StpwDwX2yMZKBQcNNGyEe1MqBYv2Bqu/uYtxw="}
+Redirected to http://lvh.me:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-12-06 22:54:30 +0800
+Processing by GameController#index as HTML
+  Rendered game/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 42ms (Views: 41.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/game.css?body=1" for 127.0.0.1 at 2014-12-06 22:54:30 +0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-12-06 22:54:30 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-06 22:54:30 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-12-06 22:54:30 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-06 22:54:30 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-12-06 22:54:30 +0800
+
+
+Started GET "/assets/game.js?body=1" for 127.0.0.1 at 2014-12-06 22:54:30 +0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-12-06 22:54:30 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-12-06 22:54:30 +0800
+  [1m[36m (0.9ms)[0m  [1mCREATE TABLE "accounts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "user_id" integer) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.8ms)[0m  [1mCREATE  INDEX "index_accounts_on_user_id" ON "accounts" ("user_id")[0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "levels" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "description" text, "hint" varchar(255), "width" integer, "height" integer, "start_x" integer, "start_y" integer, "end_x" integer, "end_y" integer, "initial_angle" integer, "terrain" text, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.6ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.6ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20141206084546')[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20141206070326')
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20141206071605')[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20141206084255')
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2014-12-06 22:54:38 +0800
+(facebook) Request phase initiated.
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2014-12-06 22:54:39 +0800
+(facebook) Request phase initiated.
+
+
+Started GET "/auth/facebook/callback?code=AQCcyI2AQERyVhLWb_E4n5dy9j1s8CDj1eq9QyuQT9AiTByTLgYfnoNAvQv_cpOJKhfCmRe_mBG8vsYedR8OXk-U1jLXpnNx0EQcQlbB-FIgzFu4FpEQQgHIjsZZD8r4Ub-qX7boE_sYTSmA4BuanK7wqcpK__mqR6RdK-EfFYYdvAUJ2vJLTfZqjNs_9SaDgiWTUk2qyqR3dcuKzj8VKqTNw-s44CHF7HqMfXI_eYr2UX6mdcMreGxmt8gjVRNzrxD6R5tiSXXOwjZ1kz3Npm0Mt4FfWUT5T-HfeTCR5C3mcPC1giAHQKcZOkN_LrErPGvk_olLkGsdLy-qrnTJCOn2NnRLgmlzgllrDOWiwVcDVw&state=b7fc425158e7596050310bb5a209ccda0653697444864e30" for 127.0.0.1 at 2014-12-06 22:54:39 +0800
+(facebook) Callback phase initiated.
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"AQCcyI2AQERyVhLWb_E4n5dy9j1s8CDj1eq9QyuQT9AiTByTLgYfnoNAvQv_cpOJKhfCmRe_mBG8vsYedR8OXk-U1jLXpnNx0EQcQlbB-FIgzFu4FpEQQgHIjsZZD8r4Ub-qX7boE_sYTSmA4BuanK7wqcpK__mqR6RdK-EfFYYdvAUJ2vJLTfZqjNs_9SaDgiWTUk2qyqR3dcuKzj8VKqTNw-s44CHF7HqMfXI_eYr2UX6mdcMreGxmt8gjVRNzrxD6R5tiSXXOwjZ1kz3Npm0Mt4FfWUT5T-HfeTCR5C3mcPC1giAHQKcZOkN_LrErPGvk_olLkGsdLy-qrnTJCOn2NnRLgmlzgllrDOWiwVcDVw", "state"=>"b7fc425158e7596050310bb5a209ccda0653697444864e30", "provider"=>"facebook"}
+  [1m[36mAccount Load (0.1ms)[0m  [1mSELECT  "accounts".* FROM "accounts"  WHERE "accounts"."provider" = 'facebook' AND "accounts"."uid" = '10152921269877922'  ORDER BY "accounts"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2014-12-06 14:54:46.348446"], ["updated_at", "2014-12-06 14:54:46.348446"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "accounts" SET "updated_at" = ?, "user_id" = ? WHERE "accounts"."id" = 1  [["updated_at", "2014-12-06 14:54:46.351835"], ["user_id", 2]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+Completed 500 Internal Server Error in 18ms
+
+NoMethodError (undefined method `id' for true:TrueClass):
+  app/controllers/sessions_controller.rb:5:in `create'
+
+
+  Rendered /Users/tristan/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /Users/tristan/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/tristan/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/tristan/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (18.3ms)
+
+
+Started GET "/auth/facebook/callback?code=AQCcyI2AQERyVhLWb_E4n5dy9j1s8CDj1eq9QyuQT9AiTByTLgYfnoNAvQv_cpOJKhfCmRe_mBG8vsYedR8OXk-U1jLXpnNx0EQcQlbB-FIgzFu4FpEQQgHIjsZZD8r4Ub-qX7boE_sYTSmA4BuanK7wqcpK__mqR6RdK-EfFYYdvAUJ2vJLTfZqjNs_9SaDgiWTUk2qyqR3dcuKzj8VKqTNw-s44CHF7HqMfXI_eYr2UX6mdcMreGxmt8gjVRNzrxD6R5tiSXXOwjZ1kz3Npm0Mt4FfWUT5T-HfeTCR5C3mcPC1giAHQKcZOkN_LrErPGvk_olLkGsdLy-qrnTJCOn2NnRLgmlzgllrDOWiwVcDVw&state=b7fc425158e7596050310bb5a209ccda0653697444864e30" for 127.0.0.1 at 2014-12-06 22:55:11 +0800
+(facebook) Callback phase initiated.
+(facebook) Authentication failure! invalid_credentials: OAuth2::Error, : 
+{"error":{"message":"This authorization code has been used.","type":"OAuthException","code":100}}
+
+OAuth2::Error (: 
+{"error":{"message":"This authorization code has been used.","type":"OAuthException","code":100}}):
+  oauth2 (1.0.0) lib/oauth2/client.rb:113:in `request'
+  oauth2 (1.0.0) lib/oauth2/client.rb:138:in `get_token'
+  oauth2 (1.0.0) lib/oauth2/strategy/auth_code.rb:29:in `get_token'
+  omniauth-oauth2 (1.2.0) lib/omniauth/strategies/oauth2.rb:93:in `build_access_token'
+  omniauth-facebook (2.0.0) lib/omniauth/strategies/facebook.rb:114:in `build_access_token'
+  omniauth-oauth2 (1.2.0) lib/omniauth/strategies/oauth2.rb:75:in `callback_phase'
+  omniauth-facebook (2.0.0) lib/omniauth/strategies/facebook.rb:72:in `block in callback_phase'
+  omniauth-facebook (2.0.0) lib/omniauth/strategies/facebook.rb:135:in `with_authorization_code!'
+  omniauth-facebook (2.0.0) lib/omniauth/strategies/facebook.rb:71:in `callback_phase'
+  omniauth (1.2.2) lib/omniauth/strategy.rb:227:in `callback_call'
+  omniauth (1.2.2) lib/omniauth/strategy.rb:184:in `call!'
+  omniauth (1.2.2) lib/omniauth/strategy.rb:164:in `call'
+  omniauth (1.2.2) lib/omniauth/builder.rb:59:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.4) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.4) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.4) lib/rails/engine.rb:514:in `call'
+  railties (4.1.4) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  thin (1.6.3) lib/thin/connection.rb:86:in `block in pre_process'
+  thin (1.6.3) lib/thin/connection.rb:84:in `catch'
+  thin (1.6.3) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.3) lib/thin/connection.rb:53:in `process'
+  thin (1.6.3) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run'
+  thin (1.6.3) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.3) lib/thin/server.rb:162:in `start'
+  rack (1.5.2) lib/rack/handler/thin.rb:16:in `run'
+  rack (1.5.2) lib/rack/server.rb:264:in `start'
+  railties (4.1.4) lib/rails/commands/server.rb:69:in `start'
+  railties (4.1.4) lib/rails/commands/commands_tasks.rb:81:in `block in server'
+  railties (4.1.4) lib/rails/commands/commands_tasks.rb:76:in `tap'
+  railties (4.1.4) lib/rails/commands/commands_tasks.rb:76:in `server'
+  railties (4.1.4) lib/rails/commands/commands_tasks.rb:40:in `run_command!'
+  railties (4.1.4) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:8:in `require'
+  bin/rails:8:in `<top (required)>'
+  spring (1.2.0) lib/spring/client/rails.rb:27:in `load'
+  spring (1.2.0) lib/spring/client/rails.rb:27:in `call'
+  spring (1.2.0) lib/spring/client/command.rb:7:in `call'
+  spring (1.2.0) lib/spring/client.rb:26:in `run'
+  spring (1.2.0) bin/spring:48:in `<top (required)>'
+  spring (1.2.0) lib/spring/binstub.rb:11:in `load'
+  spring (1.2.0) lib/spring/binstub.rb:11:in `<top (required)>'
+  bin/spring:16:in `require'
+  bin/spring:16:in `<top (required)>'
+  bin/rails:3:in `load'
+  bin/rails:3:in `<main>'
+
+
+  Rendered /Users/tristan/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /Users/tristan/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/tristan/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/tristan/.rvm/gems/ruby-2.1.4/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.0ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2014-12-06 22:55:17 +0800
+(facebook) Request phase initiated.
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2014-12-06 22:55:18 +0800
+(facebook) Request phase initiated.
+
+
+Started GET "/auth/facebook/callback?code=AQAywqKnvsy6MZbOZWGNk9NT7fF7LtgeY7x9U50AX7sN6QOInhqwEPPvc9slphFsvPPR3RcIsa_Oq6pT2R8LOlstPHSNwMiKo4pYEEj-d2L50GSKTWPUarKk7gyO2wO1AqcitweV8T4_EGbKJklT7cyJMLjj4dI4fiCAz3VtTsKLhEkRNuevTCkyBofNTZO-8_hDzKw8W4EUB3EQjxfXtQNGCRSazF2nMIN1kYL1yQRgeM3q-31yD5I2Ph8Z1My79AeagqupBRBlVEWpLHNGNnDxMTOmFRckuzpLT5mBZYKKhPVRpZB3MwEv6-1XMb4nw_ugBvm5rFQ-LwPMgr8cqujz_4xKK78RLbMtWGz0jIMM0Q&state=2198ba9bf6ad55d1fc16849e76e991c2d1833d3ff2f019c7" for 127.0.0.1 at 2014-12-06 22:55:18 +0800
+(facebook) Callback phase initiated.
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"AQAywqKnvsy6MZbOZWGNk9NT7fF7LtgeY7x9U50AX7sN6QOInhqwEPPvc9slphFsvPPR3RcIsa_Oq6pT2R8LOlstPHSNwMiKo4pYEEj-d2L50GSKTWPUarKk7gyO2wO1AqcitweV8T4_EGbKJklT7cyJMLjj4dI4fiCAz3VtTsKLhEkRNuevTCkyBofNTZO-8_hDzKw8W4EUB3EQjxfXtQNGCRSazF2nMIN1kYL1yQRgeM3q-31yD5I2Ph8Z1My79AeagqupBRBlVEWpLHNGNnDxMTOmFRckuzpLT5mBZYKKhPVRpZB3MwEv6-1XMb4nw_ugBvm5rFQ-LwPMgr8cqujz_4xKK78RLbMtWGz0jIMM0Q", "state"=>"2198ba9bf6ad55d1fc16849e76e991c2d1833d3ff2f019c7", "provider"=>"facebook"}
+  [1m[35mAccount Load (0.4ms)[0m  SELECT  "accounts".* FROM "accounts"  WHERE "accounts"."provider" = 'facebook' AND "accounts"."uid" = '10152921269877922'  ORDER BY "accounts"."id" ASC LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "accounts" ("created_at", "name", "provider", "uid", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-12-06 14:55:21.975362"], ["name", "parasquid"], ["provider", "facebook"], ["uid", "10152921269877922"], ["updated_at", "2014-12-06 14:55:21.975362"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2014-12-06 14:55:21.981369"], ["updated_at", "2014-12-06 14:55:21.981369"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "accounts" SET "updated_at" = ?, "user_id" = ? WHERE "accounts"."id" = 1  [["updated_at", "2014-12-06 14:55:21.984557"], ["user_id", 1]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://lvh.me:3000/
+Completed 302 Found in 18ms (ActiveRecord: 3.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-12-06 22:55:21 +0800
+Processing by GameController#index as HTML
+  Rendered game/index.html.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mAccount Load (0.1ms)[0m  [1mSELECT  "accounts".* FROM "accounts"  WHERE "accounts"."user_id" = ?  ORDER BY "accounts"."id" ASC LIMIT 1[0m  [["user_id", 1]]
+Completed 200 OK in 44ms (Views: 43.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/game.css?body=1" for 127.0.0.1 at 2014-12-06 22:55:22 +0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-12-06 22:55:22 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-06 22:55:22 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-12-06 22:55:22 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-06 22:55:22 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-12-06 22:55:22 +0800
+
+
+Started GET "/assets/game.js?body=1" for 127.0.0.1 at 2014-12-06 22:55:22 +0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-12-06 22:55:22 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-12-06 22:55:22 +0800
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "accounts"
+
+
+Started DELETE "/signout" for 127.0.0.1 at 2014-12-06 23:48:55 +0800
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"pe6sm1StpwDwX2yMZKBQcNNGyEe1MqBYv2Bqu/uYtxw="}
+Redirected to http://lvh.me:3000/
+Completed 302 Found in 6ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-12-06 23:48:56 +0800
+Processing by GameController#index as HTML
+  Rendered game/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 100ms (Views: 98.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/game.css?body=1" for 127.0.0.1 at 2014-12-06 23:48:56 +0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-12-06 23:48:56 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-06 23:48:56 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-12-06 23:48:56 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-06 23:48:56 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-12-06 23:48:56 +0800
+
+
+Started GET "/assets/game.js?body=1" for 127.0.0.1 at 2014-12-06 23:48:57 +0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-12-06 23:48:57 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-12-06 23:48:57 +0800
+
+
+Started GET "/" for 127.0.0.1 at 2014-12-07 12:05:42 +0800
+Processing by GameController#index as HTML
+  Rendered game/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 194ms (Views: 185.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/game.css?body=1" for 127.0.0.1 at 2014-12-07 12:05:43 +0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-12-07 12:05:43 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-07 12:05:43 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-12-07 12:05:43 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-07 12:05:43 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-12-07 12:05:43 +0800
+
+
+Started GET "/assets/game.js?body=1" for 127.0.0.1 at 2014-12-07 12:05:43 +0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-12-07 12:05:43 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-12-07 12:05:43 +0800
